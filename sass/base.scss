@@ -1,0 +1,203 @@
+/*	typography.css
+ *	modified from Dave Gamache's Skeleton
+ * 	http://www.getskeleton.com/
+ *	------------------------------------------------------------
+ *		general, heading, paragraphs, links
+ *		list, code, blockquote, horizontal rule
+ *		table, form fields, buttons, 
+ *		SPECIFICS: message, HTML5
+ */
+
+$main-color: #0AF;
+$main-color-light: #9DF;
+$success-color: #5B5;
+$success-color-light: #DFD;
+$error-color: #B58;
+$error-color-light: #FDF;
+$warning-color: #F70;
+$warning-color-light: #FEB;
+$black-a: #AAA;
+$black-c: #CCC;
+$black-d: #DDD;
+$black-e: #EEE;
+
+@mixin monospace-font { font-family: "Consolas", "Liberation Mono", "Courier", "Courier New", monospace; }
+@mixin sans-serif-font { font-family: "Helvetica", "Helevetica Neue", "Arial", sans-serif; }
+@mixin background-gradient($base-color, $pos, $stop1, $stop2) {
+	background: $base-color; /* old browsers */
+	background: $base-color -moz-linear-gradient($pos, $stop1, $stop2); /* FF3.6+ */
+	background: $base-color -webkit-linear-gradient($pos, $stop1, $stop2); /* Chrome10+,Safari5.1+ */
+	background: $base-color -o-linear-gradient($pos, $stop1, $stop2); /* Opera11.10+ */
+	background: $base-color -ms-linear-gradient($pos, $stop1, $stop2); /* IE10+ */
+	background: $base-color linear-gradient($pos, $stop1, $stop2); /* W3C */
+}
+@mixin border-radius($radius) { border-radius: $radius; -moz-border-radius: $radius; -webkit-border-radius: $radius; }
+@mixin box-shadow($data) { box-shadow: $data; -moz-box-shadow: $data; -webkit-box-shadow: $data; }
+@mixin button-color-states($color-1, $color-2, $color-3, $color-4, $alpha) {
+	background: $color-1 -webkit-gradient(linear, left top, left bottom, 
+		color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+	@include background-gradient($color-2, top, rgba(255,255,255,$alpha) 0%, rgba(0,0,0,$alpha) 100%);
+  border: 1px solid $color-3; border-top: 1px solid $color-4; border-left: 1px solid $color-4;
+}
+@mixin transition($data) { transition: $data; -moz-transition: $data; -webkit-transition: $data; }
+
+/* general */
+body { color: #333; @include sans-serif-font; font-size: 16px;
+	-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+::selection, ::-moz-selection { background: rgba(136, 221, 102, 0.75); color: #111; }
+img { height: auto; max-width: 100%; }
+
+/*	Clearfix Hack
+ * 	http://meyerweb.com/eric/tools/css/reset/
+ */
+.clearfix {
+	&:before, &:after { content: " ";  display: table; }
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+/* heading */
+h1, h2, h3, h4, h5, h6 { color:#222; 
+	font-family: "Georgia", "Times New Roman", serif; 
+	a { font-weight: inherit; }
+}
+h1 { font-size: 44px; line-height: 50px; margin-bottom: 12px; }
+h2 { font-size: 33px; line-height: 40px; margin-bottom: 10px; }
+h3 { font-size: 28px; line-height: 33px; margin-bottom: 8px; }
+h4 { font-size: 20px; line-height: 28px; margin-bottom: 6px; }
+h5 { font-size: 18px; line-height: 24px; margin-bottom: 6px; }
+h6 { font-size: 16px; line-height: 20px; margin-bottom: 6px; }
+
+/* paragraph */
+p { margin-bottom: 10px; line-height: 1.5; }
+strong, b { font-weight:bold }
+em, i { font-style:italic }
+small { font-size: 75%; }
+
+/* links */
+a { color: $main-color; text-decoration: none; 
+	&:hover { text-decoration: underline; }
+	&:visited { color: #04F; }
+}
+
+/* lists */
+ul, ol {
+	margin: 0 0 20px 25px;  
+	ul, ol { margin: 4px 0 5px 30px; font-size: 90%; 
+		li { margin-bottom: 6px; }
+	}
+}
+ul { 
+	list-style: square outside;
+	&.square { list-style: square outside; }
+	&.circle { list-style: circle outside; }
+	&.disc { list-style: disc outside; }
+	&.large li { line-height: 21px; }
+}
+ol { list-style: decimal; }
+li {
+	margin-bottom: 10px;
+	p { line-height: 21px; }
+}
+
+/* code */
+code { padding: 3px 0; background: $black-d; border-bottom: solid 1px $black-a;  line-height: 1.5em;
+	@include monospace-font; font-size: 0.8em; }
+tt { @include monospace-font; }	
+
+kbd { padding: 0 1px; vertical-align: middle; 
+	background: $black-e; border: 1px solid #CCC; 
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color: #333; @include monospace-font;
+	font-size: 80%; font-weight: normal; letter-spacing: -0.03em; }
+
+/* blockquote */
+blockquote { 
+	margin: 10px 0 10px 10px; padding: 3px 0 3px 15px; border-left: 1px solid $black-d; 
+	cite { display: block; font-size: 12px; color: #555; 
+		&:before { content: "\2014 \0020"; }
+		a { text-decoration: underline; 
+			&:visited { color: #555; }
+		}
+	}
+	&, p { font-size: 14px; line-height: 1.5em; color: #777; font-style: italic; }
+	p { margin-bottom: 0; }
+} 
+
+/* horizontal rule */
+hr { border: solid $black-d; border-width: 1px 0 0; clear: both; margin: 15px 0; height: 0; }
+
+/* table */
+table { margin: 10px 0; width:100%; border-collapse: collapse; border-spacing: 0; 
+	th, td { border: 1px solid #CCC; word-wrap: break-word; }
+	th { padding: 5px 10px; background: #DEDEDE; font-size: 95%; }
+	td { padding: 5px 7px; font-size: 85%; }
+}
+
+/* forms */
+form { margin: 20px 0; @extend .clearfix;
+	div { display: block; margin: 10px 0 15px 0; }
+	label, legend { cursor: pointer; display: block; margin-bottom: 3px; 
+		font-size: 0.95em; font-weight: bold;}
+	.input-choose-group { 
+		div { margin: 7px 0; }
+		label { display: inline; margin-left: 5px; vertical-align: top; font-weight: normal; }
+		input { margin-left: 5px; }
+	}
+}
+fieldset {
+	margin-bottom: 20px; 
+	legend { width: 100%; margin-bottom: 30px; padding: 0 0 10px 10px; 
+		border-bottom: 1px solid $black-a; font-size: 1.5em; }
+} 
+input[type="text"], input[type="password"], input[type="email"], 
+input[type="file"], textarea, select { 
+	margin-top: 5px; outline: none; padding: 5px; min-width: 350px;
+	border: 1px solid $black-a; font-size: 0.9em !important;
+	@include sans-serif-font; font-size: 1em; @include border-radius(3px);
+	&:focus { border-color: $black-a; @include box-shadow(0 0 2px $black-a); @include transition(all 0.1s ease-in); }
+}
+input[type="checkbox"] { display: inline; }
+textarea { overflow-y: auto; resize: vertical; min-height: 75px; }
+input[disabled="disabled"], .disabled { background-color: #CCC; border: solid 1px $black-a; 
+	&:hover, &:active { background-color: #BBB; }  
+}
+
+/* buttons */
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] { 
+	display: inline-block; cursor: pointer; margin: 0 5px 20px 0; line-height: normal; padding: 8px 10px;
+	text-shadow: 0 1px rgba(255, 255, 255, .75); @include sans-serif-font; 
+	@include button-color-states($black-e, $black-e, $black-a, $black-c, 0.2);
+ 	@include border-radius(3px); color: #444; font-size: 12px; font-weight: bold; text-decoration: none;
+  
+  &:hover { color: #222; @include button-color-states($black-d, $black-d, #888, $black-a, 0.3); }
+	&:active { @include button-color-states($black-c, $black-e, #666, inherit, 0.4); }
+
+	&::-moz-focus-inner { border: 0; padding: 0; } /* Fix for odd Mozilla border & padding issues */
+	&.full-width { width: 100%; padding-left: 0 !important; padding-right: 0 !important; text-align: center; }
+}
+input[type="submit"] { 
+	@include button-color-states(#7F7, #7F7, $success-color, $success-color, 0.2);
+	&:hover { @include button-color-states(#6F6, #6F6, #4B4, #4B4, 0.3); }
+	&:active { @include button-color-states(#5F5, #7F7, #181, inherit, 0.4); } }
+input[type="reset"] { 
+	@include button-color-states(#F9C, #F9C, $error-color, $error-color, 0.2);
+	&:hover { @include button-color-states(#E9B, #E9B, #947, #947, 0.3); }
+	&:active { @include button-color-states(#D9A, #F9C, #836, inherit, 0.4); } }
+
+/* message */
+.message {
+	margin: 15px; padding: 10px; @extend .clearfix;
+	background: $black-d; @include border-radius(3px); border: 1px #888 solid;
+	@include box-shadow(0 4px 3px -3px rgba(0,0,0,0.4)); font-size: 13px;  
+	p { margin-bottom: 0; }
+}
+.success { background-color: $success-color-light; border-color: $success-color; color: $success-color; }
+.error { background-color: $error-color-light; border-color: $error-color; color: $error-color; }
+.warning { background-color: $warning-color-light; border-color: $warning-color; color: $warning-color; }
+
+/* HTML5: navigation */
+nav {
+	ul { margin: 0;
+		li { display: inline-block; list-style: none; margin: 10px;  }
+	}
+}
