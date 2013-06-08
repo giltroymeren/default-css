@@ -1,14 +1,14 @@
 @import "colors";
 
-@mixin monospace-font { 
-	font-family: "Consolas", "Liberation Mono", "Courier", "Courier New", monospace; 
+@mixin monospace-font($data) { 
+	font-family: #{$data} "Consolas", "Liberation Mono", "Courier", "Courier New", monospace; 
 }
-@mixin sans-serif-font { 
-	font-family: "Helvetica", "Helevetica Neue", "Arial", sans-serif; 
+@mixin sans-serif-font($data) { 
+	font-family: #{$data} "Helvetica", "Helevetica Neue", "Arial", sans-serif; 
 }
 
-@mixin serif-font {
-	font-family: "Georgia", "Times New Roman", serif;
+@mixin serif-font($data) {
+	font-family:  #{$data} "Georgia", "Times New Roman", serif;
 }
 
 @mixin background-gradient($base-color, $pos, $stop1, $stop2) {

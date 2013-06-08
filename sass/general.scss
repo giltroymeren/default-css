@@ -8,7 +8,7 @@
 }
 
 body { 
-	@include sans-serif-font;
+	@include sans-serif-font("");
 	color: #333;  
 	font-size: 16px;
 	line-height: 1.5em;
@@ -86,7 +86,6 @@ img {
 		}
 		&:after { clear: both; }	
 }
-
 
 .full-width { 
 	width: 100%; 

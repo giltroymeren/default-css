@@ -22,10 +22,10 @@ var animatedHeader = (function() {
     function scrollPage() {
         var sy = scrollY();
         if ( sy >= changeHeaderOn ) {
-            classie.add( header, 'header-shrink' );
+            $(header).addClass('header-shrink');
         }
         else {
-            classie.remove( header, 'header-shrink' );
+            $(header).removeClass('header-shrink');
         }
         didScroll = false;
     }

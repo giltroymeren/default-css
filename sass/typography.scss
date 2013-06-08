@@ -2,7 +2,7 @@
 
 /* heading */
 h1, h2, h3, h4, h5, h6 { color:#222; 
-	@include serif-font;
+	@include serif-font("");
 	a { 
 		font-weight: inherit; 
 	}
@@ -125,16 +125,16 @@ code, kbd {
 	line-height: 1.5em;
 }
 code { 
-	@include monospace-font;
+	@include monospace-font("");
 	vertical-align: text-top;
 	background: #DEDEDE; 
 	border-bottom: solid 1px #CCC;  
 }
 tt { 
-	@include monospace-font; 
+	@include monospace-font(""); 
 }	
 kbd { 
-	@include monospace-font;
+	@include monospace-font("");
 	@include border-radius(3px);
 	vertical-align: middle; 
 	background: #EEE; 

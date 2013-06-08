@@ -1,0 +1,64 @@
+@import "partials/base";
+
+$header-height: 200px;
+$header-shrink-height: 90px;
+$success-color-light: #BF8;
+
+/* Skeleton */
+body {
+	@include sans-serif-font("Lato,");
+}
+
+#banner, [id^="nav-"] {
+	display: block;
+	padding: 0 100px;
+	text-align: justify;
+}
+
+#banner {
+    @include clearfix();
+    padding-bottom: 75px;
+    padding-top: 75px;
+    background: #EEE;
+    font-size: 1.5em;
+}
+
+[id^="nav-"] {
+    @include clearfix();
+    padding-top: $header-shrink-height * 1.5;
+    padding-bottom: $header-shrink-height * 1.5;
+    color: darken($success-color, 10%);
+    &:nth-child(odd) {
+		background: lighten($success-color, 40%);
+		color: #FFF;
+	}
+}
+
+#header-animated {
+	h1 {
+		@include monospace-font("");
+	}
+	a {
+		color: $success-color;
+		&:hover {
+			color: lighten($success-color, 30%);
+			text-decoration: none;
+		}
+		&:active {
+
+		}
+	}
+}
+
+#section-container {
+	font-size: 1.5em;
+	h1 {
+		@include sans-serif-font("");
+		font-weight: 700;
+		text-shadow: 0 1px 2px #122, 0 1px 0 #122;
+	}
+
+	.nav-details {
+		margin: 25px 0;
+	}
+}
