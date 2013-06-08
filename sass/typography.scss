@@ -148,3 +148,12 @@ blockquote {
 		margin-bottom: 0; 
 	}
 } 
+
+/* horizontal rule */
+hr { 
+	margin: 15px 0; 
+	height: 0; 
+	border: solid #DDD; 
+	border-width: 1px 0 0; 
+	clear: both; 
+}

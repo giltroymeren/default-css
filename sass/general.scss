@@ -6,9 +6,6 @@ body { color: #333; @include sans-serif-font; font-size: 16px;
 ::selection, ::-moz-selection { background: rgba(136, 221, 102, 0.75); color: #111; }
 img { height: auto; max-width: 100%; }
 
-/* horizontal rule */
-hr { border: solid #DDD; border-width: 1px 0 0; clear: both; margin: 15px 0; height: 0; }
-
 /* table */
 table { margin: 10px 0; width:100%; border-collapse: collapse; border-spacing: 0; 
 	th, td { border: 1px solid #CCC; word-wrap: break-word; }

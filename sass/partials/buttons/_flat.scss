@@ -12,7 +12,7 @@ $orange-yellow-flat-color-set: (#C90, #960, #B80, #DA2);
 @mixin button-flat($color-set) {
 	@include border-radius(4px);
 	
-	margin: 10px 3px 3px 3px;
+	margin: 10px 3px 3px 0;
 	padding: 10px 15px;
 	background-color: nth($color-set, 1);
 	border-color: nth($color-set, 2);
