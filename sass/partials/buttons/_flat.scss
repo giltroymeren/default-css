@@ -1,0 +1,47 @@
+//$blue-flat-color-set: (bg-color #06A, border-color #047, active-bg-color #059, hover-bg-color #27B)
+$blue-flat-color-set: (#06A, #047, #059, #27B);
+//$grey-flat-color-set: (bg-color #888, border-color #444, active-bg-color #666, hover-bg-color #808080)
+$grey-flat-color-set: (#888, #444, #666, #808080);
+//$green-flat-color-set: (bg-color #3B0, border-color #270, active-bg-color #290, hover-bg-color #4B2)
+$green-flat-color-set: (#3B0, #270, #290, #4B2);
+//$red-flat-color-set: (bg-color #B02, border-color #801, active-bg-color #A01, hover-bg-color #C23)
+$red-flat-color-set: (#B02, #801, #A01, #C23);
+//$orange-yellow-flat-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
+$orange-yellow-flat-color-set: (#C90, #960, #B80, #DA2);
+
+@mixin button-flat($color-set) {
+	@include border-radius(4px);
+	
+	margin: 10px 3px 3px 3px;
+	padding: 10px 15px;
+	background-color: nth($color-set, 1);
+	border-color: nth($color-set, 2);
+	border-width: 1px;
+	color: #FFF;
+	text-shadow: none !important;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&:hover {
+		background-color: nth($color-set, 4);
+		border-color: nth($color-set, 2);
+	}
+
+	&:active {
+		position: relative;
+		background-color: nth($color-set, 3);
+	}
+}
+
+@mixin button-flat-theme($theme) {
+	@if $theme == "success" {
+		@include button-flat($green-flat-color-set);
+	} @else if $theme == "error" {
+		@include button-flat($red-flat-color-set);
+	} @else if $theme == "warning" {
+		@include button-flat($orange-yellow-flat-color-set);
+	} @else if $theme == "disabled" {
+		@include button-flat($grey-flat-color-set);
+	} @else {
+		@include button-flat($blue-flat-color-set);
+	}
+}

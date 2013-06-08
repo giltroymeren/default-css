@@ -1,11 +1,13 @@
-//$grey-color-set: (bg-color #888, border-color #444, active-bg-color #666, hover-bg-color #808080)
-$grey-color-set: (#888, #444, #666, #808080);
-//$green-color-set: (bg-color #3B0, border-color #270, active-bg-color #290, hover-bg-color #4B2)
-$green-color-set: (#3B0, #270, #290, #4B2);
-//$red-color-set: (bg-color #B02, border-color #801, active-bg-color #A01, hover-bg-color #C23)
-$red-color-set: (#B02, #801, #A01, #C23);
-//$orange-yellow-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
-$orange-yellow-color-set: (#C90, #960, #B80, #DA2);
+//$blue-threeD-color-set: (bg-color #06A, border-color #047, active-bg-color #059, hover-bg-color #27B)
+$blue-threeD-color-set: (#06A, #047, #059, #27B);
+//$grey-threeD-color-set: (bg-color #888, border-color #444, active-bg-color #666, hover-bg-color #808080)
+$grey-threeD-color-set: (#888, #444, #666, #808080);
+//$green-threeD-color-set: (bg-color #3B0, border-color #270, active-bg-color #290, hover-bg-color #4B2)
+$green-threeD-color-set: (#3B0, #270, #290, #4B2);
+//$red-threeD-color-set: (bg-color #B02, border-color #801, active-bg-color #A01, hover-bg-color #C23)
+$red-threeD-color-set: (#B02, #801, #A01, #C23);
+//$orange-yellow-threeD-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
+$orange-yellow-threeD-color-set: (#C90, #960, #B80, #DA2);
 
 @mixin button-threeD($color-set) {
 	@include box-shadow(inset 0 1px 0 rgba(255,255,255, 0.5));
@@ -35,12 +37,14 @@ $orange-yellow-color-set: (#C90, #960, #B80, #DA2);
 
 @mixin button-threeD-theme($theme) {
 	@if $theme == "success" {
-		@include button-threeD($green-color-set);
+		@include button-threeD($green-threeD-color-set);
 	} @else if $theme == "error" {
-		@include button-threeD($red-color-set);
+		@include button-threeD($red-threeD-color-set);
 	} @else if $theme == "warning" {
-		@include button-threeD($orange-yellow-color-set);
+		@include button-threeD($orange-yellow-threeD-color-set);
+	} @else if $theme == "disabled" {
+		@include button-threeD($grey-threeD-color-set);
 	} @else {
-		@include button-threeD($grey-color-set);
+		@include button-threeD($blue-threeD-color-set);
 	}
 }

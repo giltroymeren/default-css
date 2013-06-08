@@ -1,0 +1,69 @@
+@import "partials/buttons/threeD";
+@import "partials/buttons/modern";
+@import "partials/buttons/flat";
+@import "partials/buttons/chrome";
+
+@mixin set-button-theme($theme) {
+	@if $theme == "threeD" {
+		input[type="submit"], .positive-btn { 
+			@include button-threeD-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-threeD-theme("error");	
+		}
+		.warning-btn {
+			@include button-threeD-theme("warning");
+		}
+		.regular-btn, a.button {
+			@include button-threeD-theme("base");
+		}	
+		.disabled {
+			@include button-threeD-theme("disabled");
+		}
+	} @else if $theme == "modern" {
+		input[type="submit"], .positive-btn { 
+			@include button-modern-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-modern-theme("error");	
+		}
+		.warning-btn {
+			@include button-modern-theme("warning");
+		}
+		.regular-btn, a.button {
+			@include button-modern-theme("base");
+		}	
+		.disabled {
+			@include button-modern-theme("disabled");
+		}
+	} @else if $theme == "flat" {
+		input[type="submit"], .positive-btn { 
+			@include button-flat-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-flat-theme("error");	
+		}
+		.warning-btn {
+			@include button-flat-theme("warning");
+		}
+		.regular-btn, a.button {
+			@include button-flat-theme("base");
+		}	
+		.disabled {
+			@include button-flat-theme("disabled");
+		}
+	} @else if $theme == "chrome" {
+		input[type="submit"], .positive-btn { 
+			@include button-chrome-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-chrome-theme("error");	
+		}
+		.warning-btn {
+			@include button-chrome-theme("warning");
+		}
+		.regular-btn {
+			@include button-chrome-theme("base");
+		}	
+	}
+}

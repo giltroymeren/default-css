@@ -1,0 +1,53 @@
+//$blue-modern-color-set: (bg-color #06A, border-color #047, active-bg-color #059, hover-bg-color #27B)
+$blue-modern-color-set: (#06A, #047, #059, #27B);
+//$grey-modern-color-set: (bg-color #888, border-color #444, active-bg-color #666, hover-bg-color #808080)
+$grey-modern-color-set: (#888, #444, #666, #808080);
+//$green-modern-color-set: (bg-color #3B0, border-color #270, active-bg-color #290, hover-bg-color #4B2)
+$green-modern-color-set: (#3B0, #270, #290, #4B2);
+//$red-modern-color-set: (bg-color #B02, border-color #801, active-bg-color #A01, hover-bg-color #C23)
+$red-modern-color-set: (#B02, #801, #A01, #C23);
+//$orange-yellow-modern-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
+$orange-yellow-modern-color-set: (#C90, #960, #B80, #DA2);
+
+@mixin embossed {
+	@include box-shadow("inset 0 -2px 1px rgba(255,255,255,0.2),
+    	inset 0 3px 2px rgba(0,0,0,0.12)");
+}
+
+@mixin button-modern($color-set) {
+	@include border-radius(5px);
+	@include embossed;
+	margin-top: 10px;
+	padding: 10px 15px;
+	background-color: nth($color-set, 1);
+	border-color: nth($color-set, 2);
+	border-width: 1px;
+	color: #FFF;
+	text-shadow: none !important;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&:hover {
+		background-color: nth($color-set, 4);
+		border-color: nth($color-set, 2);
+	}
+
+	&:active {
+		position: relative;
+		background-color: nth($color-set, 3);
+		border-width: 3px 1px 1px 1px;
+	}
+}
+
+@mixin button-modern-theme($theme) {
+	@if $theme == "success" {
+		@include button-modern($green-modern-color-set);
+	} @else if $theme == "error" {
+		@include button-modern($red-modern-color-set);
+	} @else if $theme == "warning" {
+		@include button-modern($orange-yellow-modern-color-set);
+	} @else if $theme == "disabled" {
+		@include button-modern($grey-modern-color-set);
+	} @else {
+		@include button-modern($blue-modern-color-set);
+	}
+}

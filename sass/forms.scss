@@ -1,35 +1,5 @@
 @import "partials/base";
-@import "partials/buttons/threeD";
-
-@mixin set-button-theme($theme) {
-	@if $theme == "threeD" {
-		input[type="submit"], .positive-btn { 
-			@include button-threeD-theme("success");
-		}
-		input[type="reset"], .negative-btn { 
-			@include button-threeD-theme("error");	
-		}
-		.warning-btn {
-			@include button-threeD-theme("warning");
-		}
-		.regular-btn {
-			@include button-threeD-theme("base");
-		}	
-	} @else if $theme == "chrome" {
-		input[type="submit"], .positive-btn { 
-			@include button-chrome-theme("success");
-		}
-		input[type="reset"], .negative-btn { 
-			@include button-chrome-theme("error");	
-		}
-		.warning-btn {
-			@include button-chrome-theme("warning");
-		}
-		.regular-btn {
-			@include button-chrome-theme("base");
-		}	
-	}
-}
+@import "partials/buttons/index";
 
 form { 
 	@include clearfix;
@@ -73,7 +43,7 @@ input[type="email"],
 input[type="file"], 
 textarea, 
 select { 
-	@include border-radius(2px);
+	@include border-radius(4px);
 	@include sans-serif-font;
 	min-width: 350px;
 	padding: 5px; 
@@ -82,7 +52,7 @@ select {
 	outline: none; 
 	&:focus { 
 		@include box-shadow(0 0 4px #777); 
-		@include transition(all 0.1s ease);
+		@include transition("all 0.1s ease");
 		border-color: #777;  
 	}
 }
@@ -108,7 +78,7 @@ input[disabled="disabled"],
 	border: solid 1px #AAA; 
 	&:hover, &:active { 
 		background-color: darken(#CCC, 5%); 
-		@include transition(background 0.25s ease);
+		@include transition("background 0.25s ease");
 	}  
 }
 
@@ -155,23 +125,35 @@ input[type="submit"],
 input[type="reset"], 
 input[type="button"] { 
 	@include sans-serif-font; 
+	@include border-radius(3px);
 	
 	cursor: pointer;
 	display: inline-block;
+	padding: 10px 15px;
 	vertical-align: top; /* prevents other buttons from moving when one is active */
 	-webkit-appearance: none;
+	border: 1px solid #444;
  	border-style: solid;
+ 	color: #111;
  	font-size: 14px; 
  	font-weight: 600;
  	line-height: normal; 
  	text-align: center;
  	text-decoration: none;
 	text-shadow: 0 1px rgba(255, 255, 255, .4); 
+
+	&:hover {
+		background-color: #CCC;
+	}
+	&:active {
+		background-color: #AAA;
+	}
+
 	/* Fix for odd Mozilla border & padding issues */
 	&::-moz-focus-inner { 
 		border: 0; 
 		padding: 0; 
 	} 
 }
-/* buttonn themes */
-@include set-button-theme("threeD");
+/* button themes */
+@include set-button-theme("flat");

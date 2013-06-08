@@ -1,0 +1,150 @@
+@import "partials/base";
+
+/* heading */
+h1, h2, h3, h4, h5, h6 { color:#222; 
+	@include serif-font;
+	a { 
+		font-weight: inherit; 
+	}
+}
+h1 { font-size: 44px; line-height: 45px; margin-bottom: 12px; }
+h2 { font-size: 33px; line-height: 40px; margin-bottom: 10px; }
+h3 { font-size: 28px; line-height: 30px; margin-bottom: 8px; }
+h4 { font-size: 20px; line-height: 20px; margin-bottom: 6px; }
+h5 { font-size: 18px; line-height: 20px; margin-bottom: 6px; }
+h6 { font-size: 16px; line-height: 20px; margin-bottom: 6px; }
+
+/* paragraph */
+p { 
+	margin-bottom: 10px; 
+	line-height: 1.5;
+}
+strong, b { 
+	font-weight:bold 
+}
+em, i { 
+	font-style:italic 
+}
+small { 
+	font-size: 75%; 
+}
+
+/* links */
+a { 
+	cursor: pointer;
+	display: inline-block;
+  	border-bottom: 1px dashed darken($main-color, 5%);
+	color: $main-color; 
+	font-weight: 500;
+	line-height: 1.25em;
+  	text-decoration: none; 
+	
+	&:hover { 
+		border-style: dotted;
+	}
+	&:visited { 
+		border-color: lighten($main-color, 10%);
+		color: #04F; 
+	}
+}
+
+/* lists */
+ul, ol {
+	margin: 0 0 0 2em;  
+	line-height: 1em;
+	ul, ol { 
+		margin-top: 0.75em; 
+		font-size: 95%; 
+	}
+}
+ul { 
+	list-style: square outside;
+	&.square { 
+		list-style: square outside; 
+	}
+	&.circle { 
+		list-style: circle outside; 
+	}
+	&.disc { 
+		list-style: disc outside; 
+	}
+	ul {
+		list-style-type: disc;
+		ul {
+			list-style-type: circle;
+		}
+	}
+}
+ol { 
+	list-style: decimal; 
+	ol {
+		list-style: lower-alpha; 
+		ol {
+			list-style: lower-roman; 
+		}
+	}
+}
+li {
+	margin-bottom: 10px;
+	p { line-height: 21px; }
+}
+
+/* code */
+code, kbd {
+	margin: 0 0.2em;
+	padding: 0.1em 0.25em; 
+	font-size: 0.8em; 
+	line-height: 1.5em;
+}
+code { 
+	@include monospace-font;
+	vertical-align: text-top;
+	background: #DEDEDE; 
+	border-bottom: solid 1px #CCC;  
+}
+tt { 
+	@include monospace-font; 
+}	
+kbd { 
+	@include monospace-font;
+	@include border-radius(3px);
+	vertical-align: middle; 
+	background: #EEE; 
+	border: 1px solid #CCC; 
+	color: #333; 
+	letter-spacing: -0.03em; 
+}
+
+/* blockquote */
+blockquote { 
+	margin: 10px 0 10px 10px; 
+	padding: 3px 0 3px 15px; 
+	border-left: 1px solid #DDD; 
+	
+	cite { 
+		margin-top: 10px;
+		display: block; 
+		font-size: 12px; 
+		font-style: normal;
+		color: #555; 
+		&:before { 
+			content: "\2014 \0020"; 
+		}
+		a { 
+			text-decoration: underline; 
+			&:visited { 
+				color: #555; 
+			}
+		}
+	}
+	&, p { 
+		color: #777; 
+		font-size: 95%; 
+		font-style: italic; 
+		line-height: 1.5em; 
+		text-align: justify;
+	}
+	p { 
+		margin-bottom: 0; 
+	}
+} 

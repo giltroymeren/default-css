@@ -1,15 +1,15 @@
-//$orange-color-set: (bg-color #F82, border-color #D71, bg-grad-start #FA2, 
+//$orange-chrome-color-set: (bg-color #F82, border-color #D71, bg-grad-start #FA2, 
 //		bg-grad-stop #E72, hover-grad-start #F81, hover-grad-stop #E61);
-$orange-color-set: (#F82, #D71, #FA2, #E72, #F81, #E61);
-//$green-color-set: (bg-color #8D2, border-color #4B1, bg-grad-start #9D2, 
+$orange-chrome-color-set: (#F82, #D71, #FA2, #E72, #F81, #E61);
+//$green-chrome-color-set: (bg-color #8D2, border-color #4B1, bg-grad-start #9D2, 
 //		bg-grad-stop #2C3, hover-grad-start #5D1, hover-grad-stop #AD1);
-$green-color-set: (#8D2, #4B1, #9D2, #2C3, #5D1, #AD1);
-//$rose-color-set: (bg-color #D26, border-color #B1A, bg-grad-start #D28, 
+$green-chrome-color-set: (#8D2, #4B1, #9D2, #2C3, #5D1, #AD1);
+//$rose-chrome-color-set: (bg-color #D26, border-color #B1A, bg-grad-start #D28, 
 //		bg-grad-stop #C27, hover-grad-start #D1B, hover-grad-stop #C18);
-$rose-color-set: (#D26, #B1A, #D1B, #C18, #D28, #C27);
-//$grey-color-set: (bg-color #777, border-color #666, bg-grad-start #999, 
+$rose-chrome-color-set: (#D26, #B1A, #D1B, #C18, #D28, #C27);
+//$grey-chrome-color-set: (bg-color #777, border-color #666, bg-grad-start #999, 
 //		bg-grad-stop #AAA, hover-grad-start #BBB, hover-grad-stop #CCC);
-$grey-color-set: (#777, #666, #888, #444, #666, #777);
+$grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 
 
 @mixin button-chrome($color-set) {
@@ -39,12 +39,12 @@ $grey-color-set: (#777, #666, #888, #444, #666, #777);
 }
 @mixin button-chrome-theme($theme) {
 	@if $theme == "success" {
-		@include button-chrome($green-color-set);
+		@include button-chrome($green-chrome-color-set);
 	} @else if $theme == "error" {
-		@include button-chrome($rose-color-set);
+		@include button-chrome($rose-chrome-color-set);
 	} @else if $theme == "warning" {
-		@include button-chrome($orange-color-set);
+		@include button-chrome($orange-chrome-color-set);
 	} @else {
-		@include button-chrome($grey-color-set);
+		@include button-chrome($grey-chrome-color-set);
 	}
 }

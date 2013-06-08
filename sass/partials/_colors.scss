@@ -1,14 +1,5 @@
-$main-color: #0AF;
-$main-color-light: #9DF;
-
+$main-color: #06A;
+$complement-color: complement($main-color);
 $success-color: #3B0;
-$success-color-dark: #270;
-$success-color-light: #4B2;
-
 $error-color: #B02;
-$error-color-dark: #801;
-$error-color-light: #C23;
-
 $warning-color: #C90;
-$warning-color-dark: #960;
-$warning-color-light: #DA2;
