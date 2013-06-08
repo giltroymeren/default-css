@@ -6,13 +6,6 @@ body { color: #333; @include sans-serif-font; font-size: 16px;
 ::selection, ::-moz-selection { background: rgba(136, 221, 102, 0.75); color: #111; }
 img { height: auto; max-width: 100%; }
 
-/* table */
-table { margin: 10px 0; width:100%; border-collapse: collapse; border-spacing: 0; 
-	th, td { border: 1px solid #CCC; word-wrap: break-word; }
-	th { padding: 5px 10px; background: #DEDEDE; font-size: 95%; }
-	td { padding: 5px 7px; font-size: 85%; }
-}
-
 /* message */
 .message {
 	margin: 15px; padding: 10px; @include clearfix;
