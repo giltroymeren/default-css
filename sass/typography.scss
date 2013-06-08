@@ -165,7 +165,7 @@ table {
 	border-collapse: collapse; 
 	border-spacing: 0; 
 	thead th {
-		background: #333; 
+		background: #555; 
   		color: white; 
 		font-size: 95%; 
 		font-weight: bold;
@@ -182,4 +182,8 @@ table {
 		word-wrap: break-word; 
 	}
 	
+}
+
+.table-fixed {
+	table-layout: fixed;
 }
