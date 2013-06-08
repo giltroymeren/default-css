@@ -1,0 +1,177 @@
+@import "partials/base";
+@import "partials/buttons/threeD";
+
+@mixin set-button-theme($theme) {
+	@if $theme == "threeD" {
+		input[type="submit"], .positive-btn { 
+			@include button-threeD-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-threeD-theme("error");	
+		}
+		.warning-btn {
+			@include button-threeD-theme("warning");
+		}
+		.regular-btn {
+			@include button-threeD-theme("base");
+		}	
+	} @else if $theme == "chrome" {
+		input[type="submit"], .positive-btn { 
+			@include button-chrome-theme("success");
+		}
+		input[type="reset"], .negative-btn { 
+			@include button-chrome-theme("error");	
+		}
+		.warning-btn {
+			@include button-chrome-theme("warning");
+		}
+		.regular-btn {
+			@include button-chrome-theme("base");
+		}	
+	}
+}
+
+form { 
+	@include clearfix;
+	margin: 20px 0; 
+
+	label { 
+		margin-bottom: 3px;
+		margin-left: -2px;
+		padding: 3px; 
+		vertical-align: middle;
+		cursor: pointer;  
+	}
+
+	label, h5, .label-title {
+		@include sans-serif-font;
+		color: #555;
+		font-size: 1.25em;
+		font-weight: 600;
+	}
+
+	div {
+		@include clearfix;
+		margin: 10px 0 20px 0;
+	}
+}
+
+fieldset {
+	margin-bottom: 20px; 
+	legend { 
+		margin-bottom: 30px; 
+		padding: 0 0 10px 10px; 
+		width: 100%; 
+		border-bottom: 1px solid #AAA; 
+		font-size: 1.5em; 
+	}
+} 
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="file"], 
+textarea, 
+select { 
+	@include border-radius(2px);
+	@include sans-serif-font;
+	min-width: 350px;
+	padding: 5px; 
+	border: 1px solid #AAA; 
+	font-size: 1em;
+	outline: none; 
+	&:focus { 
+		@include box-shadow(0 0 4px #777); 
+		@include transition(all 0.1s ease);
+		border-color: #777;  
+	}
+}
+
+textarea { 
+	overflow-y: auto; 
+	resize: vertical; 
+	min-height: 75px; 
+}
+
+select {
+	cursor: pointer;
+}
+
+input[type="checkbox"], 
+input[type="radio"] { 
+	display: inline; 
+}
+
+input[disabled="disabled"], 
+.disabled { 
+	background-color: #CCC; 
+	border: solid 1px #AAA; 
+	&:hover, &:active { 
+		background-color: darken(#CCC, 5%); 
+		@include transition(background 0.25s ease);
+	}  
+}
+
+.input-choose-group {
+	div {
+		margin: 10px;
+	}
+	label {
+		margin-right: 10px !important;
+		color: #333;
+		font-size: 0.9em !important;
+	}
+	label, input, textarea, select {
+		display: inline !important;
+	}
+}
+
+.button-container {
+	margin-top: 40px;
+	input, button, a.button {
+		display: inline-block !important;
+	}
+}
+
+.form-vert > div {
+	label, input, textarea, select {
+		display: block;
+	}
+}
+
+.form-hor > div {
+	label {
+		display: inline-block;
+		margin-right: 15px;
+		width: 175px;
+		vertical-align: top;
+	}
+}
+
+/* buttons */
+a.button, 
+button, 
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"] { 
+	@include sans-serif-font; 
+	
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: top; /* prevents other buttons from moving when one is active */
+	-webkit-appearance: none;
+ 	border-style: solid;
+ 	font-size: 14px; 
+ 	font-weight: 600;
+ 	line-height: normal; 
+ 	text-align: center;
+ 	text-decoration: none;
+	text-shadow: 0 1px rgba(255, 255, 255, .4); 
+	/* Fix for odd Mozilla border & padding issues */
+	&::-moz-focus-inner { 
+		border: 0; 
+		padding: 0; 
+	} 
+}
+/* buttonn themes */
+@include set-button-theme("threeD");

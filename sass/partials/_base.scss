@@ -1,0 +1,43 @@
+@import "colors";
+
+@mixin monospace-font { 
+	font-family: "Consolas", "Liberation Mono", "Courier", "Courier New", monospace; 
+}
+@mixin sans-serif-font { 
+	font-family: "Helvetica", "Helevetica Neue", "Arial", sans-serif; 
+}
+
+@mixin background-gradient($base-color, $pos, $stop1, $stop2) {
+	background: $base-color; /* old browsers */
+	background: $base-color -moz-linear-gradient($pos, $stop1, $stop2); /* FF3.6+ */
+	background: $base-color -webkit-linear-gradient($pos, $stop1, $stop2); /* Chrome10+,Safari5.1+ */
+	background: $base-color -o-linear-gradient($pos, $stop1, $stop2); /* Opera11.10+ */
+	background: $base-color -ms-linear-gradient($pos, $stop1, $stop2); /* IE10+ */
+	background: $base-color linear-gradient($pos, $stop1, $stop2); /* W3C */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='$stop1', endColorstr='$stop2'); /* lte IE9 */
+}
+@mixin border-radius($radius) { 
+	border-radius: $radius; 
+	-moz-border-radius: $radius; 
+	-webkit-border-radius: $radius; 
+} 
+@mixin box-shadow($data) { 
+	box-shadow: $data; 
+	-moz-box-shadow: $data; 
+	-webkit-box-shadow: $data; 
+}
+/*	Clearfix Hack
+ * 	http://meyerweb.com/eric/tools/css/reset/ */
+@mixin clearfix {
+	&:before, &:after { 
+		content: " ";  
+		display: table; 
+	}
+	&:after { clear: both; }
+	*zoom: 1;
+}
+
+@mixin transition($data) { 
+	transition: $data; 
+	-moz-transition: $data; 
+	-webkit-transition: $data; }

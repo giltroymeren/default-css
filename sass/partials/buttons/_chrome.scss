@@ -1,0 +1,50 @@
+//$orange-color-set: (bg-color #F82, border-color #D71, bg-grad-start #FA2, 
+//		bg-grad-stop #E72, hover-grad-start #F81, hover-grad-stop #E61);
+$orange-color-set: (#F82, #D71, #FA2, #E72, #F81, #E61);
+//$green-color-set: (bg-color #8D2, border-color #4B1, bg-grad-start #9D2, 
+//		bg-grad-stop #2C3, hover-grad-start #5D1, hover-grad-stop #AD1);
+$green-color-set: (#8D2, #4B1, #9D2, #2C3, #5D1, #AD1);
+//$rose-color-set: (bg-color #D26, border-color #B1A, bg-grad-start #D28, 
+//		bg-grad-stop #C27, hover-grad-start #D1B, hover-grad-stop #C18);
+$rose-color-set: (#D26, #B1A, #D1B, #C18, #D28, #C27);
+//$grey-color-set: (bg-color #777, border-color #666, bg-grad-start #999, 
+//		bg-grad-stop #AAA, hover-grad-start #BBB, hover-grad-stop #CCC);
+$grey-color-set: (#777, #666, #888, #444, #666, #777);
+
+
+@mixin button-chrome($color-set) {
+	@include background-gradient(nth($color-set, 1), top, 
+		nth($color-set, 3) 0%, nth($color-set, 4) 100%);
+	@include border-radius(4px);
+	@include transition(all 0.1s ease-in);
+
+	display: inline-block; 
+	margin: 0 5px 20px 0; 
+	padding: 8px 15px;
+
+	color: #222 !important;
+	border: solid 1px nth($color-set, 2);
+	
+	&:hover {
+		@include background-gradient(nth($color-set, 5), top, 
+			nth($color-set, 5) 0%, nth($color-set, 6) 100%);
+	}
+	&:active {
+		top: 1px;
+		position: relative;
+		color: #444;
+		@include background-gradient(nth($color-set, 1), top, 
+			nth($color-set, 4) 0%, nth($color-set, 3) 100%);
+	}
+}
+@mixin button-chrome-theme($theme) {
+	@if $theme == "success" {
+		@include button-chrome($green-color-set);
+	} @else if $theme == "error" {
+		@include button-chrome($rose-color-set);
+	} @else if $theme == "warning" {
+		@include button-chrome($orange-color-set);
+	} @else {
+		@include button-chrome($grey-color-set);
+	}
+}

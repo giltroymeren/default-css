@@ -1,0 +1,109 @@
+@import "partials/base";
+
+/* general */
+body { color: #333; @include sans-serif-font; font-size: 16px;
+	-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+::selection, ::-moz-selection { background: rgba(136, 221, 102, 0.75); color: #111; }
+img { height: auto; max-width: 100%; }
+
+/* heading */
+h1, h2, h3, h4, h5, h6 { color:#222; 
+	font-family: "Georgia", "Times New Roman", serif; 
+	a { font-weight: inherit; }
+}
+h1 { font-size: 44px; line-height: 50px; margin-bottom: 12px; }
+h2 { font-size: 33px; line-height: 40px; margin-bottom: 10px; }
+h3 { font-size: 28px; line-height: 33px; margin-bottom: 8px; }
+h4 { font-size: 20px; line-height: 28px; margin-bottom: 6px; }
+h5 { font-size: 18px; line-height: 24px; margin-bottom: 6px; }
+h6 { font-size: 16px; line-height: 20px; margin-bottom: 6px; }
+
+/* paragraph */
+p { margin-bottom: 10px; line-height: 1.5; }
+strong, b { font-weight:bold }
+em, i { font-style:italic }
+small { font-size: 75%; }
+
+/* links */
+a { color: $main-color; text-decoration: none; 
+	&:hover { text-decoration: underline; }
+	&:visited { color: #04F; }
+}
+
+/* lists */
+ul, ol {
+	margin: 0 0 20px 25px;  
+	ul, ol { margin: 4px 0 5px 30px; font-size: 90%; 
+		li { margin-bottom: 6px; }
+	}
+}
+ul { 
+	list-style: square outside;
+	&.square { list-style: square outside; }
+	&.circle { list-style: circle outside; }
+	&.disc { list-style: disc outside; }
+	&.large li { line-height: 21px; }
+}
+ol { list-style: decimal; }
+li {
+	margin-bottom: 10px;
+	p { line-height: 21px; }
+}
+
+/* code */
+code { padding: 3px 0; background: #DDD; border-bottom: solid 1px #AAA;  line-height: 1.5em;
+	@include monospace-font; font-size: 0.8em; }
+tt { @include monospace-font; }	
+
+kbd { padding: 0 1px; vertical-align: middle; 
+	background: #EEE; border: 1px solid #CCC; 
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color: #333; @include monospace-font;
+	font-size: 80%; font-weight: normal; letter-spacing: -0.03em; }
+
+/* blockquote */
+blockquote { 
+	margin: 10px 0 10px 10px; padding: 3px 0 3px 15px; border-left: 1px solid #DDD; 
+	cite { display: block; font-size: 12px; color: #555; 
+		&:before { content: "\2014 \0020"; }
+		a { text-decoration: underline; 
+			&:visited { color: #555; }
+		}
+	}
+	&, p { font-size: 14px; line-height: 1.5em; color: #777; font-style: italic; }
+	p { margin-bottom: 0; }
+} 
+
+/* horizontal rule */
+hr { border: solid #DDD; border-width: 1px 0 0; clear: both; margin: 15px 0; height: 0; }
+
+/* table */
+table { margin: 10px 0; width:100%; border-collapse: collapse; border-spacing: 0; 
+	th, td { border: 1px solid #CCC; word-wrap: break-word; }
+	th { padding: 5px 10px; background: #DEDEDE; font-size: 95%; }
+	td { padding: 5px 7px; font-size: 85%; }
+}
+
+/* message */
+.message {
+	margin: 15px; padding: 10px; @include clearfix;
+	background: #DDD; @include border-radius(3px); border: 1px #888 solid;
+	@include box-shadow(0 4px 3px -3px rgba(0,0,0,0.4)); font-size: 13px;  
+	p { margin-bottom: 0; }
+}
+.success { background-color: $success-color-light; border-color: $success-color; color: $success-color; }
+.error { background-color: $error-color-light; border-color: $error-color; color: $error-color; }
+.warning { background-color: $warning-color-light; border-color: $warning-color; color: $warning-color; }
+
+/* HTML5: navigation */
+nav {
+	ul { margin: 0;
+		li { display: inline-block; list-style: none; margin: 10px;  }
+	}
+}
+
+.full-width { 
+	width: 100%; 
+	padding-left: 0 !important; 
+	padding-right: 0 !important; 
+	text-align: center; 
+}
