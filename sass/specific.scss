@@ -12,7 +12,12 @@ body {
 #banner, [id^="nav-"] {
 	display: block;
 	padding: 0 100px;
+	color: darken($success-color, 10%);
 	text-align: justify;
+}
+
+#banner, #section-container {
+	font-size: 1.8em;
 }
 
 #banner {
@@ -20,14 +25,13 @@ body {
     padding-bottom: 75px;
     padding-top: 75px;
     background: #EEE;
-    font-size: 1.5em;
 }
 
 [id^="nav-"] {
     @include clearfix();
     padding-top: $header-shrink-height * 1.5;
     padding-bottom: $header-shrink-height * 1.5;
-    color: darken($success-color, 10%);
+
     &:nth-child(odd) {
 		background: lighten($success-color, 40%);
 		color: #FFF;
@@ -51,7 +55,6 @@ body {
 }
 
 #section-container {
-	font-size: 1.5em;
 	h1 {
 		@include sans-serif-font("");
 		font-weight: 700;
