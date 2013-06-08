@@ -11,33 +11,78 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/typography.css">
 	<link rel="stylesheet" type="text/css" href="css/forms.css">
+	<link rel="stylesheet" type="text/css" href="css/utilities/animated-header.css">
+
+	<style type="text/css">
+		body {
+			width: 100%;
+		}
+	</style>
 </head>
 
 <body>
 
 	<div id="main-wrapper">
 
-		<header id="header-animated">
-			<div class="header-inner">
-				<h1>default-css</h1>
-
-				<nav>
-					<a href="#nav-about">About</a>
-					<a href="#nav-breakdown">Breakdown</a>
-					<a href="#nav-limits">Limitations</a>
-					<a href="#nav-sources">Sources</a>
-					<a href="#nav-contact">Contact</a>
-				</nav>
-			</div>
-		</header>
-
 		<div id="main-body">
 
+			<div id="header-container">
+
+				<header id="header-animated">
+					<div class="header-inner">
+						<h1>default-css</h1>
+
+						<nav>
+							<a href="#nav-about">About</a>
+							<a href="#nav-breakdown">Breakdown</a>
+							<a href="#nav-limits">Limitations</a>
+							<a href="#nav-sources">Sources</a>
+							<a href="#nav-contact">Contact</a>
+						</nav>
+					</div>
+				</header>
+
+				<div id="banner">
+
+				</div>
+
+				<article id="section-container">
+					<section id="nav-about">
+						<h1>About</h1>
+
+					</section>
+
+					<section id="nav-breakdown">
+						<h1>Breakdown</h1>
+
+					</section>
+
+					<section id="nav-limits">
+						<h1>Limitations</h1>
+
+					</section>
+
+
+					<section id="nav-sources">
+						<h1>Sources</h1>
+
+					</section>
+
+					<section id="nav-contact">
+						<h1>Contact</h1>
+
+					</section>
+				</article>	
+			</div>	
 
 		</div>
 
 	</div>
 	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/smooth-scroll.js"></script>
+	<script type="text/javascript" src="js/classie.js"></script>
+	<script type="text/javascript" src="js/animated-header.js"></script>
 
 </body>
 

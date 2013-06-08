@@ -1,6 +1,12 @@
 @import "partials/base";
 
 /* general */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body { 
 	@include sans-serif-font;
 	color: #333;  
@@ -72,29 +78,19 @@ img {
 
 
 /* custom support styles */
+.clearfix {
+	*zoom: 1;
+		&:before, &:after { 
+			content: " ";  
+			display: table; 
+		}
+		&:after { clear: both; }	
+}
+
+
 .full-width { 
 	width: 100%; 
 	padding-left: 0 !important; 
 	padding-right: 0 !important; 
 	text-align: center; 
-}
-
-/* Animated Header */
-#header-animated {
-	position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #f6f6f6;
-    z-index: 10000;
-    height: 230px;
-    overflow: hidden;
-    @include transition("height 0.3s");
-
-    .header-inner {
-    	width: 90%;
-	    max-width: 69em;
-	    margin: 0 auto;
-	    padding: 0 1.875em;
-    }
 }

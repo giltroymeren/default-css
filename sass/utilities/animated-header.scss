@@ -1,0 +1,133 @@
+@import "partials/base";
+
+$header-height: 200px;
+$header-shrink-height: 90px;
+
+/* Animated Header */
+
+#header-container {
+    margin-top: $header-height;
+}
+
+#banner {
+    @include clearfix();
+    height: 300px;
+    background: #EEE;
+}
+
+[id^="nav-"] {
+    @include clearfix();
+    height: 600px;
+    display: block;
+    padding: 30px;
+    padding-top: $header-shrink-height * 1.5;
+}
+
+#nav-about { background: #888; }
+#nav-breakdown { background: #3B0; }
+#nav-limits { background: #A09; }
+#nav-sources { background: #C90; }
+#nav-contact { background: #01A; }
+
+#header-animated {
+    @include box-shadow("0 -3px 5px 5px rgba(0,0,0,0.5)");
+    @include transition("height 0.3s");
+
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(#FFF, 0.75);
+    z-index: 10000;
+    height: $header-height;
+    overflow: hidden;
+
+    .header-inner {
+    	width: 90%;
+	    max-width: 69em;
+	    margin: 0 auto;
+	    padding: 0 1.875em;
+    }
+
+    h1, nav {
+    	display: inline-block;
+    	position: relative;
+    }
+    h1, nav a {
+    	@include transition("all 0.3s");
+    	line-height: 230px;
+        text-shadow: 0 1px 2px #122, 0 1px 0 #122;
+    }
+    h1 {	
+ 		float: left;
+ 		margin: 0;
+ 		color: #333;
+    	letter-spacing: 4px;
+    	font-size: 4em;
+    }
+    nav {
+    	float: right;
+    }
+    nav a {
+    	margin: 0 0 0 20px;
+    	font-size: 1.4em;
+    	font-weight: 600;
+    }
+    &.header-shrink {
+	    height: $header-shrink-height;
+	    h1, nav a {
+	    	line-height: 90px;
+	    }
+	    h1 {
+	    	font-size: 2em;
+	    }
+	}
+}
+
+
+/* Example Media Queries */
+@media screen and (max-width: 55em) {
+     
+    #header-animated {
+    	.header-inner {
+        	width: 100%;
+        }
+        h1, nav {
+        	display: block;
+        	float: none;
+	        margin: 0 auto;
+	        text-align: center;
+        }
+        h1, nav a {
+        	line-height: 115px;
+        }
+        nav a {
+        	margin: 0 10px;
+        }
+        &.header-shrink {
+        	h1, nav a {
+        		line-height: 45px;
+        	}
+        	h1 {
+        		font-size: 2em;
+        	}
+        	nav a {
+        		font-size: 1em;
+        	}
+        }
+    }
+}
+ 
+@media screen and (max-width: 32.25em) {
+    #header-animated nav a {
+        font-size: 1em;
+    }
+}
+ 
+@media screen and (max-width: 24em) {
+    #header-animated {
+    	nav a, &.header-shrink nav a {
+    		line-height: 1;
+    	}
+    }
+}
