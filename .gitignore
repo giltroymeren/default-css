@@ -8,6 +8,7 @@
 *.so
 *.css
 *.dat
+*.sass-cache
 
 # Packages #
 ############
