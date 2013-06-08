@@ -48,6 +48,9 @@ img {
 		&:hover {
 			color: #888;
 		}
+		&:active {
+			color: #555;
+		}
 	}
 }
 .alert-success { 
@@ -66,16 +69,32 @@ img {
 	color: darken($warning-color, 5%); 
 }
 
-/* HTML5: navigation */
-nav {
-	ul { margin: 0;
-		li { display: inline-block; list-style: none; margin: 10px;  }
-	}
-}
 
+
+/* custom support styles */
 .full-width { 
 	width: 100%; 
 	padding-left: 0 !important; 
 	padding-right: 0 !important; 
 	text-align: center; 
+}
+
+/* Animated Header */
+#header-animated {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f6f6f6;
+    z-index: 10000;
+    height: 230px;
+    overflow: hidden;
+    @include transition("height 0.3s");
+
+    .header-inner {
+    	width: 90%;
+	    max-width: 69em;
+	    margin: 0 auto;
+	    padding: 0 1.875em;
+    }
 }
