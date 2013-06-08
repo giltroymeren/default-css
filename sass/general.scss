@@ -1,13 +1,28 @@
 @import "partials/base";
 
 /* general */
-body { color: #333; @include sans-serif-font; font-size: 16px;
-	-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
-::selection, ::-moz-selection { background: rgba(136, 221, 102, 0.75); color: #111; }
-img { height: auto; max-width: 100%; }
+body { 
+	@include sans-serif-font;
+	color: #333;  
+	font-size: 16px;
+	line-height: 1.5em;
+	-webkit-font-smoothing: antialiased; 
+	-webkit-text-size-adjust: 100%; 
+}
 
-/* message */
-[class^="message"] {
+::selection, 
+::-moz-selection { 
+	background: rgba(136, 221, 102, 0.75); 
+	color: #111; 
+}
+
+img { 
+	height: auto; 
+	max-width: 100%; 
+}
+
+/* alerts */
+[class^="alert-"] {
 	@include clearfix;
 	@include border-radius(3px);
 	margin: 15px 0; 
@@ -35,19 +50,19 @@ img { height: auto; max-width: 100%; }
 		}
 	}
 }
-.message-success { 
+.alert-success { 
 	background-color: lighten($success-color, 55%); 
-	border-color: lighten($success-color, 30%); 
+	border-color: lighten($success-color, 40%); 
 	color: darken($success-color, 5%); 
 }
-.message-error { 
+.alert-error { 
 	background-color: lighten($error-color, 55%); 
-	border-color: lighten($error-color, 30%); 
+	border-color: lighten($error-color, 40%); 
 	color: darken($error-color, 5%); 
 }
-.message-warning { 
+.alert-warning { 
 	background-color: lighten($warning-color, 55%); 
-	border-color: lighten($warning-color, 30%); 
+	border-color: lighten($warning-color, 40%); 
 	color: darken($warning-color, 5%); 
 }
 

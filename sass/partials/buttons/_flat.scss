@@ -27,6 +27,7 @@ $orange-yellow-flat-color-set: (#C90, #960, #B80, #DA2);
 	}
 
 	&:active {
+		@include box-shadow("inset 0 3px 3px " + darken(nth($color-set, 1), 10%));
 		position: relative;
 		background-color: nth($color-set, 3);
 	}
