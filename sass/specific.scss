@@ -4,10 +4,6 @@
 $success-color-light: #BF8;
 
 /* Skeleton */
-body {
-	@include sans-serif-font("Lato,");
-}
-
 #header-animated {
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYV2NkwATGQKGzaMLGjOgC2BSBxJAVYjUJphGmEK8ikK0ghQQVwRSie2fIegYACygScTf2dYoAAAAASUVORK5CYII=");
 	h1 {
@@ -39,12 +35,10 @@ body {
 #banner, [id^="nav-"] {
 	display: block;
 	padding: 0 100px;
-	color: darken($success-color, 10%);
-	text-align: justify;
 }
 
 #banner, #section-container {
-	font-size: 1.8em;
+	& > p { font-size: 1.8em; }
 }
 
 #banner {
@@ -53,18 +47,8 @@ body {
     padding-top: 75px;
 }
 
-#section-container {
-	h1 {
-		@include sans-serif-font("");
-		font-weight: 700;
-		z-index: 0;
-	}
-
-	.nav-details {
-		display: block;
-		margin: 50px 0;
-	}
-}
+$success-color-dark: darken($success-color, 15%);
+$success-color-light: lighten($success-color, 40%);
 
 [id^="nav-"] {
     @include clearfix();
@@ -72,11 +56,42 @@ body {
     padding-bottom: $header-shrink-height * 1.5;
     z-index: 100;
 
-    h1 {
-    	color: #444;
-    }
     &:nth-child(odd) {
-		background: lighten($success-color, 40%);
-		color: #FFF;
+		background: $success-color-light;
+	}
+
+	.width-wrapper {
+		margin: 0 auto;
+		width: 960px;
+
+		& > h1:first-child {
+			@include sans-serif-font("Lato,");
+			font-weight: 700;
+	    	color: #444;
+		}
+	}
+}
+
+#section-container {
+
+	.nav-details {
+		display: block;
+		margin: 50px 0;
+
+		h2:first-child {
+			@include sans-serif-font("Lato,");
+			margin-bottom: 0;
+			padding: 0 20px;
+			background: $success-color-dark;
+			color: $default-color;
+			font-size: 1.5em;
+			font-weight: 700;
+		}
+
+		& > div {
+			@include clearfix();
+			padding: 20px;
+			border: 1px solid $success-color-dark;
+		}
 	}
 }

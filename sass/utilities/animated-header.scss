@@ -2,12 +2,13 @@
 
 $header-height: 175px;
 $header-shrink-height: 75px;
+$default-color: #EEE;
 
 /* Animated Header */
-
 body {
-    background: #EEE;
+    background: $default-color;
 }
+
 /* contains the header and the sections */
 #header-container {
     margin-top: $header-height;

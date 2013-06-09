@@ -93,3 +93,17 @@ img {
 	padding-right: 0 !important; 
 	text-align: center; 
 }
+
+.left, .right {
+	width: 48%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}

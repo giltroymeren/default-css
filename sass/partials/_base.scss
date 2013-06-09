@@ -1,7 +1,7 @@
 @import "colors";
 
 @mixin monospace-font($data) { 
-	font-family: #{$data} "Consolas", "Liberation Mono", "Courier", "Courier New", monospace; 
+	font-family: #{$data} "Consolas", "Liberation Mono", "Courier", "Courier New", monospace !important; 
 }
 @mixin sans-serif-font($data) { 
 	font-family: #{$data} "Helvetica", "Helevetica Neue", "Arial", sans-serif; 
