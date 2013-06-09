@@ -1,7 +1,7 @@
 @import "partials/base";
 
-$header-height: 190px;
-$header-shrink-height: 90px;
+$header-height: 175px;
+$header-shrink-height: 75px;
 
 /* Animated Header */
 
@@ -32,11 +32,11 @@ body {
 
     h1, nav {
     	display: inline-block;
-    	position: relative;
     }
     h1, nav a {
     	@include transition("all 0.3s");
     	line-height: $header-height;
+        vertical-align: middle;
     }
     h1 {	
  		float: left;
@@ -57,7 +57,7 @@ body {
 	    height: $header-shrink-height;
         background: rgba(#FFF, 0.75);
 	    h1, nav a {
-	    	line-height: 90px;
+	    	line-height: $header-shrink-height;
 	    }
 	    h1 {
 	    	font-size: 2em;

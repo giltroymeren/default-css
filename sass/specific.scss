@@ -1,7 +1,6 @@
 @import "partials/base";
+@import "utilities/animated-header";
 
-$header-height: 200px;
-$header-shrink-height: 90px;
 $success-color-light: #BF8;
 
 /* Skeleton */
@@ -19,6 +18,20 @@ body {
 		&:hover {
 			color: lighten($success-color, 30%);
 			text-decoration: none;
+		}
+	}
+
+	nav nav {
+		display: none;
+		a {
+			display: block;
+			float: none;
+			padding: 10px 25px;
+			position: relative;
+			top: 100%;
+			background: rgba(#FFF, 0.25);
+			color: darken($success-color, 5%);
+			line-height: 1.5em;
 		}
 	}
 }
