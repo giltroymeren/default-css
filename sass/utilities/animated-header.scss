@@ -1,33 +1,33 @@
 @import "partials/base";
 
-$header-height: 200px;
+$header-height: 190px;
 $header-shrink-height: 90px;
 
 /* Animated Header */
 
+body {
+    background: #EEE;
+}
 /* contains the header and the sections */
 #header-container {
     margin-top: $header-height;
 }
 
 #header-animated {
-    @include box-shadow("0 -3px 5px 5px rgba(0,0,0,0.5)");
     @include transition("height 0.3s");
 
 	position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(#FFF, 0.75);
     z-index: 10000;
     height: $header-height;
     overflow: hidden;
 
     .header-inner {
+        @include clearfix();
     	width: 90%;
-	    max-width: 69em;
 	    margin: 0 auto;
-	    padding: 0 1.875em;
     }
 
     h1, nav {
@@ -36,8 +36,7 @@ $header-shrink-height: 90px;
     }
     h1, nav a {
     	@include transition("all 0.3s");
-    	line-height: 230px;
-        text-shadow: 0 1px 2px #122, 0 1px 0 #122;
+    	line-height: $header-height;
     }
     h1 {	
  		float: left;
@@ -51,11 +50,12 @@ $header-shrink-height: 90px;
     }
     nav a {
     	margin: 0 0 0 20px;
-    	font-size: 1.4em;
+    	font-size: 1.5em;
     	font-weight: 600;
     }
     &.header-shrink {
 	    height: $header-shrink-height;
+        background: rgba(#FFF, 0.75);
 	    h1, nav a {
 	    	line-height: 90px;
 	    }
