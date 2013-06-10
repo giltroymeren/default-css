@@ -34,7 +34,6 @@ body {
     h1, nav {
         @include transition("all 0.3s");
         width: 48%;
-        line-height: $header-height;
         vertical-align: middle;
     }
 
@@ -44,33 +43,31 @@ body {
         color: #333;
         letter-spacing: 4px;
         font-size: 4em;
-    }
-
-    nav ul {
         line-height: $header-height;
     }
 
     nav {
         float: right;
+
         li {
             display: inline;
             list-style-type: none;
-            
+
             ul {
-                display: none;
-                margin: 0;
-                width: 200px;
                 li {
                     display: block;
                     margin: 0;
-                    padding: 10px 5px;
+                    padding: 10px 15px;
                     background: rgba(#FFF, 0.5);
                     border-bottom: 1px solid #BEBEBE;
-
+                    a {
+                        display: block;
+                        margin: 0;
+                        font-size: 1em;
+                    }
                     &:last-child {
                         border-bottom: 0;
                     }
-
 
                     &:hover {
                         background: rgba(#FFF, 0.75);
