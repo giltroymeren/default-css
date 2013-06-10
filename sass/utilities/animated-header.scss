@@ -32,32 +32,64 @@ body {
     }
 
     h1, nav {
-    	display: inline-block;
-    }
-    h1, nav a {
-    	@include transition("all 0.3s");
-    	line-height: $header-height;
+        @include transition("all 0.3s");
+        width: 48%;
+        line-height: $header-height;
         vertical-align: middle;
     }
-    h1 {	
- 		float: left;
- 		margin: 0;
- 		color: #333;
-    	letter-spacing: 4px;
-    	font-size: 4em;
+
+    h1 {
+        float: left;
+        margin: 0;
+        color: #333;
+        letter-spacing: 4px;
+        font-size: 4em;
     }
+
+    nav ul {
+        line-height: $header-height;
+    }
+
     nav {
-    	float: right;
+        float: right;
+        li {
+            display: inline;
+            list-style-type: none;
+            
+            ul {
+                display: none;
+                margin: 0;
+                width: 200px;
+                li {
+                    display: block;
+                    margin: 0;
+                    padding: 10px 5px;
+                    background: rgba(#FFF, 0.5);
+                    border-bottom: 1px solid #BEBEBE;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+
+
+                    &:hover {
+                        background: rgba(#FFF, 0.75);
+                    }
+                }
+            }
+            a {
+                margin: 0 0 0 20px;
+                font-size: 1.5em;
+                font-weight: 600;
+            }
+        }
     }
-    nav a {
-    	margin: 0 0 0 20px;
-    	font-size: 1.5em;
-    	font-weight: 600;
-    }
+
     &.header-shrink {
+        @include clearfix();
 	    height: $header-shrink-height;
-        background: rgba(#FFF, 0.75);
-	    h1, nav a {
+        background: rgba(#FFF, 0.9);
+	    h1, nav ul {
 	    	line-height: $header-shrink-height;
 	    }
 	    h1 {
@@ -74,42 +106,21 @@ body {
     	.header-inner {
         	width: 100%;
         }
-        h1, nav {
-        	display: block;
-        	float: none;
-	        margin: 0 auto;
-	        text-align: center;
-        }
-        h1, nav a {
-        	line-height: 115px;
-        }
-        nav a {
-        	margin: 0 10px;
-        }
-        &.header-shrink {
-        	h1, nav a {
-        		line-height: 45px;
-        	}
-        	h1 {
-        		font-size: 2em;
-        	}
-        	nav a {
-        		font-size: 1em;
-        	}
-        }
-    }
+    }   
 }
  
 @media screen and (max-width: 32.25em) {
-    #header-animated nav a {
-        font-size: 1em;
+    #header-animated {
+        nav li a {
+            font-size: 1em;
+        }
     }
 }
  
 @media screen and (max-width: 24em) {
     #header-animated {
-    	nav a, &.header-shrink nav a {
-    		line-height: 1;
+    	nav li a, &.header-shrink nav li a {
+    		line-height: 1em !important;
     	}
     }
 }

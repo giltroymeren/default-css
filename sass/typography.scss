@@ -57,13 +57,16 @@ ul, ol {
 }
 ul { 
 	list-style: square outside;
-	&.square { 
+	&.list-no-bullet { 
+		list-style: none; 
+	}
+	&.list-square { 
 		list-style: square outside; 
 	}
-	&.circle { 
+	&.list-circle { 
 		list-style: circle outside; 
 	}
-	&.disc { 
+	&.list-disc { 
 		list-style: disc outside; 
 	}
 	ul {

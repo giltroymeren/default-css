@@ -16,82 +16,14 @@ $success-color-light: #BF8;
 			text-decoration: none;
 		}
 	}
-
-	nav nav {
-		display: none;
-		a {
-			display: block;
-			float: none;
-			padding: 10px 25px;
-			position: relative;
-			top: 100%;
-			background: rgba(#FFF, 0.25);
-			color: darken($success-color, 5%);
-			line-height: 1.5em;
-		}
-	}
-}
-
-#banner, [id^="nav-"] {
-	display: block;
-	padding: 0 100px;
-}
-
-#banner, #section-container {
-	& > p { font-size: 1.8em; }
 }
 
 #banner {
-    @include clearfix();
-    padding-bottom: 75px;
-    padding-top: 75px;
+	@include clearfix();
+	display: block;
+    padding: 75px 100px;
+    font-size: 1.8em;
 }
 
 $success-color-dark: darken($success-color, 15%);
 $success-color-light: lighten($success-color, 40%);
-
-[id^="nav-"] {
-    @include clearfix();
-    padding-top: $header-shrink-height * 1.5;
-    padding-bottom: $header-shrink-height * 1.5;
-    z-index: 100;
-
-    &:nth-child(odd) {
-		background: $success-color-light;
-	}
-
-	.width-wrapper {
-		margin: 0 auto;
-		width: 960px;
-
-		& > h1:first-child {
-			@include sans-serif-font("Lato,");
-			font-weight: 700;
-	    	color: #444;
-		}
-	}
-}
-
-#section-container {
-
-	.nav-details {
-		display: block;
-		margin: 50px 0;
-
-		h2:first-child {
-			@include sans-serif-font("Lato,");
-			margin-bottom: 0;
-			padding: 0 20px;
-			background: $success-color-dark;
-			color: $default-color;
-			font-size: 1.5em;
-			font-weight: 700;
-		}
-
-		& > div {
-			@include clearfix();
-			padding: 20px;
-			border: 1px solid $success-color-dark;
-		}
-	}
-}
