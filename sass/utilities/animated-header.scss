@@ -87,6 +87,7 @@ body {
 
     &.header-shrink {
         @include clearfix();
+        @include box-shadow(0 2px 4px -2px rgba(#000,0.5));
 	    height: $header-shrink-height;
         background: rgba(#FFF, 0.9);
 	    h1, nav a {
