@@ -25,8 +25,13 @@ $success-color-light: #BF8;
     font-size: 1.8em;
 }
 
-div[id^="nav-"] {
+div[id^="nav-"], section {
 	padding-top: $header-shrink-height * 1.25;
+}
+
+.title {
+	@include sans-serif-font("");
+	font-weight: 700;
 }
 
 #nav-breakdown {
@@ -34,10 +39,30 @@ div[id^="nav-"] {
 
 	& > div {
 		margin: 0 1%;
-		padding: 1%;
 	}
 	& > .left {
 		width: 21%;
+		background: #FFF;
+		border: 1px solid #CCC;
+
+		.title {
+			margin: 0;
+			padding: 5%;
+		}
+
+		a {
+			display: block;
+			padding: 3% 5%;
+			border-top: 1px solid #CCC;
+			color: $success-color;
+			font-size: 1.5em;
+			font-weight: 600;
+
+			&:hover {
+				background: #EEE;
+				text-decoration: none;
+			}
+		}
 
 		&.sticky {
 			top: $header-shrink-height * 1.25;
@@ -46,10 +71,37 @@ div[id^="nav-"] {
 		}
 	}
 	& > .right {
+		padding: 1%;
 		width: 71%;
+	}
+
+	section {
+		.title, .content {
+			border: 1px solid #CCC;
+		}
+		.title {
+			margin: 0;
+			padding: 1% 3%;
+			background: darken($success-color, 10%);
+			border-bottom: 0;
+			color: #FFF;
+		}
+		.content {
+			padding:3%;
+			background: #FFF;
+		}
 	}
 }
 
-.bg-black {
-	background: black;
+/* SPECIFICS */
+#heading table tr {
+	text-align: center;
+}
+
+.inside-note {
+	margin: 10px 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 2px dashed #CCC;
+	border-bottom: 2px dashed #CCC;
 }

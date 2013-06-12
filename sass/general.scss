@@ -10,7 +10,7 @@
 body { 
 	@include sans-serif-font("");
 	color: #333;  
-	font-size: 16px;
+	font-size: 1em;
 	line-height: 1.5em;
 	-webkit-font-smoothing: antialiased; 
 	-webkit-text-size-adjust: 100%; 
@@ -115,8 +115,9 @@ img {
 
 [class$="-cols"] {
 	@include clearfix();
-
+	word-wrap: break-word;
 	& > div {
+		display: inline-block;
 		float: left;
 		margin: 0% 2%;
 	}
@@ -125,6 +126,16 @@ img {
 div.two-cols > div {
 	width: 46%;
 }
+	/* uneven width */
+	div.two-odd-cols div {
+		margin: 0 2% 0 0;
+		&:first-child {
+			width: 40%;
+		}
+		&:last-child {
+			width: 56%;
+		}
+	}
 
 div.three-cols > div {
 	width: 29.33333%;

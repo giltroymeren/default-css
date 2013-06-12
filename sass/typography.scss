@@ -1,23 +1,26 @@
 @import "partials/base";
 
 /* heading */
-h1, h2, h3, h4, h5, h6 { color:#222; 
+h1, h2, h3, h4, h5, h6 { 
 	@include serif-font("");
+	margin-bottom: 10px;
+	color:#222; 
+
 	a { 
 		font-weight: inherit; 
 	}
 }
-h1 { font-size: 3.50em; line-height: 60px; margin-bottom: 10px; }
-h2 { font-size: 2.75em; line-height: 48px; margin-bottom: 10px; }
-h3 { font-size: 2.25em; line-height: 35px; margin-bottom: 10px; }
-h4 { font-size: 2.00em; line-height: 28px; margin-bottom: 5px; }
-h5 { font-size: 1.75em; line-height: 28px; margin-bottom: 5px; }
-h6 { font-size: 1.50em; line-height: 28px; margin-bottom: 5px; }
+h1 { font-size: 3.50em; line-height: 60px; }
+h2 { font-size: 2.75em; line-height: 48px; }
+h3 { font-size: 2.25em; line-height: 35px; }
+h4 { font-size: 2.00em; line-height: 28px; }
+h5 { font-size: 1.75em; line-height: 28px; }
+h6 { font-size: 1.50em; line-height: 28px; }
 
 /* paragraph */
 p { 
 	margin-bottom: 15px; 
-	line-height: 1.6;
+	line-height: 1.6em;
 }
 strong, b { 
 	font-weight:bold 
@@ -219,7 +222,7 @@ hr {
 $table-main-bg: #555;
 
 table { 
-	margin: 10px 0; 
+	margin: 10px 0 20px 0; 
 	width:100%; 
 	border-spacing: 0; 
 

@@ -58,9 +58,8 @@
 			<div id="nav-breakdown">
 
 				<div class="left">
+					<h2 class="title">Styles</h2>
 					<nav>
-						<h2>Selection</h2>
-
 						<a href="#heading">Headings</a>
 						<a href="#paragraph">Paragraphs</a>
 						<a href="#list">Lists</a>
@@ -72,33 +71,100 @@
 
 				<div id="breakdown-content" class="right">
 
-					<section id="heading">
-						<h2>Headings</h2>
+					<section class="pusher">
+						CONTENT
+					</section>
 
-						<h1>h1 heading</h1>
-						<h2>h2 heading</h2>
-						<h3>h3 heading</h3>
-						<h4>h4 heading</h4>
-						<h5>h5 heading</h5>
-						<h6>h6 heading</h6>
+					<section id="heading">
+						<h2 class="title">Headings</h2>
+
+						<div class="content two-odd-cols">
+							<div>
+								<h1>h1 heading</h1>
+								<h2>h2 heading</h2>
+								<h3>h3 heading</h3>
+								<h4>h4 heading</h4>
+								<h5>h5 heading</h5>
+								<h6>h6 heading</h6>
+							</div>
+							<div>
+								<p>
+									Headings by default are <em>serif</em>, with a <tt>font-stack</tt> consisting of
+									<em>Garamond</em>, <em>Times New Roman</em> and the browser <em>serif</em> font.
+								</p>
+								<p>Their <tt>font-size</tt> values are as follows:</p>
+								
+								<table class="striped-even">
+									<thead>
+										<tr>
+											<th>Heading</th>
+											<th>Font Size</th>
+											<th>Line Height</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><tt>&#60;h1&#62;</tt></td>
+											<td>3.50em</td>
+											<td>60px</td>
+										</tr>
+										<tr>
+											<td><tt>&#60;h2&#62;</tt></td>
+											<td>2.75em</td>
+											<td>48px</td>
+										</tr>
+										<tr>
+											<td><tt>&#60;h3&#62;</tt></td>
+											<td>2.25em</td>
+											<td>35px</td>
+										</tr>
+										<tr>
+											<td><tt>&#60;h4&#62;</tt></td>
+											<td>2.00em</td>
+											<td>28px</td>
+										</tr>
+										<tr>
+											<td><tt>&#60;h5&#62;</tt></td>
+											<td>1.75em</td>
+											<td>28px</td>
+										</tr>
+										<tr>
+											<td><tt>&#60;h6&#62;</tt></td>
+											<td>1.50em</td>
+											<td>28px</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<p>
+									All heading tags have <tt>10px</tt> of bottom margin.
+								</p>
+
+							</div>
+						</div>	
 					</section>
 
 					<section id="paragraph">
-						<h2>Paragraphs</h2>
+						<h2 class="title">Paragraphs</h2>
 
-						<p>
-							Twelve ziggurats quickly jumped a finch box. My faxed joke won a pager in the cable TV quiz show. The quick onyx goblin jumps over the lazy dwarf. The lazy major was fixing Cupid&#8217;s broken quiver. Amazingly few discotheques provide jukeboxes. Foxy diva Jennifer Lopez wasn&#8217;t baking my quiche. Cozy lummox gives smart squid who asks for job pen. By Jove, my quick study of lexicography won a prize. Painful zombies quickly watch a jinxed graveyard. Fax back Jim&#8217;s Gwyneth Paltrow video quiz. My girl wove six dozen plaid jackets before she quit.
-						</p>
-
-						<p>
-							Six big devils from Japan quickly forgot how to waltz. &#8220;Who am taking the ebonics quiz?&#8221;, the prof jovially axed. Why shouldn&#8217;t a quixotic Kazakh vampire jog barefoot? Grumpy wizards make a toxic brew for the jovial queen Sixty zips were quickly picked from the woven jute bag. Big July earthquakes confound zany experimental vow. Foxy parsons quiz and cajole the lovably dim wiki-girl. Cute, kind, jovial, foxy physique, amazing beauty? Wowser! Have a pick: twenty six letters — no forcing a jumbled quiz! A very big box sailed up then whizzed quickly from Japan. Jack quietly moved up front and seized the big ball of wax. Few black taxis drive up major roads on quiet hazy nights.
-						</p>
-
-						<div class="footnote">
+						<div class="content">
 							<p>
-								Pangram ipsums by <a target="_blank" href="http://mcdlr.com/pangram-ipsum/">mcdlr</a>.
+								Twelve ziggurats quickly jumped a finch box. My faxed joke won a pager in the cable TV quiz show. The quick onyx goblin jumps over the lazy dwarf. The lazy major was fixing Cupid&#8217;s broken quiver. Amazingly few discotheques provide jukeboxes. Foxy diva Jennifer Lopez wasn&#8217;t baking my quiche. Cozy lummox gives smart squid who asks for job pen. By Jove, my quick study of lexicography won a prize. Painful zombies quickly watch a jinxed graveyard. Fax back Jim&#8217;s Gwyneth Paltrow video quiz. My girl wove six dozen plaid jackets before she quit.
 							</p>
+
+							<p>
+								Six big devils from Japan quickly forgot how to waltz. &#8220;Who am taking the ebonics quiz?&#8221;, the prof jovially axed. Why shouldn&#8217;t a quixotic Kazakh vampire jog barefoot? Grumpy wizards make a toxic brew for the jovial queen Sixty zips were quickly picked from the woven jute bag. Big July earthquakes confound zany experimental vow. Foxy parsons quiz and cajole the lovably dim wiki-girl. Cute, kind, jovial, foxy physique, amazing beauty? Wowser! Have a pick: twenty six letters — no forcing a jumbled quiz! A very big box sailed up then whizzed quickly from Japan. Jack quietly moved up front and seized the big ball of wax. Few black taxis drive up major roads on quiet hazy nights.
+							</p>
+
+							<div class="inside-note	">
+								<p>
+									Paragraphs have a base size of <tt>1em</tt>, a bottom margin of <tt>15px</tt> and a <tt>1.6em</tt>
+									line-height.
+								</p>
+							</div>
 						</div>
+
+						
 					</section>
 
 					<section id="list">
@@ -775,11 +841,13 @@
 	<script type="text/javascript">
 	$(document).ready(function() {
 
+		// Sticky sidebar on view
+		// http://stackoverflow.com/a/2907906/1685185
 		var $window = $(window),
 	       $stickyEl = $('#nav-breakdown .left'),
 	       elTop = $stickyEl.offset().top;
 
-	   $window.scroll(function() {
+	   	$window.scroll(function() {
 	        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
 	    });
 
