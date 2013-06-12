@@ -25,5 +25,31 @@ $success-color-light: #BF8;
     font-size: 1.8em;
 }
 
-$success-color-dark: darken($success-color, 15%);
-$success-color-light: lighten($success-color, 40%);
+div[id^="nav-"] {
+	padding-top: $header-shrink-height * 1.25;
+}
+
+#nav-breakdown {
+	position: relative;
+
+	& > div {
+		margin: 0 1%;
+		padding: 1%;
+	}
+	& > .left {
+		width: 21%;
+
+		&.sticky {
+			top: $header-shrink-height * 1.25;
+			left: 0;
+			position: fixed;
+		}
+	}
+	& > .right {
+		width: 71%;
+	}
+}
+
+.bg-black {
+	background: black;
+}

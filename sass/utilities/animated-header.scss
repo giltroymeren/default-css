@@ -37,13 +37,16 @@ body {
         vertical-align: middle;
     }
 
+    h1, nav a {
+        line-height: $header-height;
+    }
+
     h1 {
         float: left;
         margin: 0;
         color: #333;
         letter-spacing: 4px;
         font-size: 4em;
-        line-height: $header-height;
     }
 
     nav {
@@ -86,7 +89,7 @@ body {
         @include clearfix();
 	    height: $header-shrink-height;
         background: rgba(#FFF, 0.9);
-	    h1, nav ul {
+	    h1, nav a {
 	    	line-height: $header-shrink-height;
 	    }
 	    h1 {
