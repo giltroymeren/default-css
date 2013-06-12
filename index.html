@@ -547,12 +547,12 @@
 					</section>
 
 					<section id="table">
-						<h2>Tables</h2>
+						<h2 class="title">Tables</h2>
 
-						<div class="two-cols">
+						<div class="content two-cols">
 
 							<div>
-								<h3>Default</h3>
+								<h3 class="title-sub">Default</h3>
 								<p>
 									Apply the class <code>table-default</code> to the <code>&#60;table&#62;</code> tag.
 								</p>
@@ -587,7 +587,7 @@
 							</div>
 
 							<div>
-								<h3>Minimal</h3>
+								<h3 class="title-sub">Minimal</h3>
 								<p>
 									Apply the class <code>table-lined</code> to the <code>&#60;table&#62;</code> tag.
 								</p>
@@ -622,9 +622,10 @@
 							</div>
 
 							<div>
-								<h3>Zebra Striped (even)</h3>
+								<h3 class="title-sub">Zebra Striped (even)</h3>
 								<p>
 									Apply the class <code>striped-even</code> to the <code>&#60;table&#62;</code> tag.
+									Can be used in combination with the other classes.
 								</p>
 
 								<table class="striped-even">
@@ -657,9 +658,10 @@
 							</div>
 
 							<div>
-								<h3>Zebra Striped (odd)</h3>
+								<h3 class="title-sub">Zebra Striped (odd)</h3>
 								<p>
 									Apply the class <code>striped-odd</code> to the <code>&#60;table&#62;</code> tag.
+									Can be used in combination with the other classes.
 								</p>
 
 								<table class="striped-odd">
@@ -695,7 +697,7 @@
 					</section>
 
 					<section id="form">
-						<h2>Forms</h2>
+						<h2 class="title">Forms</h2>
 
 						<div>
 							<h3>Textboxes</h3>
@@ -845,13 +847,37 @@
 					</section>
 
 					<section id="button">
-						<h2>Buttons</h2>
+						<h2 class="title">Buttons</h2>
+
+						<div class="content">
+							<h3 class="title-sub">Default</h3>
+							<div class="two-odd-cols">
+								<div>
+									<input type="submit" value="Submit Button" />
+									<input type="reset" value="Reset Button" />
+									<input type="button" value="Warning Button" class="warning-btn" />
+									<input type="button" value="Disabled Button" disabled="disabled" />
+									<input type="button" value="Button Button" />
+									<button>Button</button>
+									<a href="" class="button">Link Button</a>
+								</div>
+								<div>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+								</div>
+							</div>
+						</div>
 					</section>
 
 				</div>
 
 			</div>
-
 			
 
 		</div>
@@ -874,23 +900,6 @@
 	        $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
 	    });
 
-		$(function(){
-
-		    $("nav ul li").hover(function(){
-		    
-		        $(this).addClass("hover");
-		        $('ul:first',this).css('visibility', 'visible');
-		    
-		    }, function(){
-		    
-		        $(this).removeClass("hover");
-		        $('ul:first',this).css('visibility', 'hidden');
-		    
-		    });
-		    
-		    $("nav ul li ul li:has(ul)").find("a:first").append(" &raquo; ");
-
-		});
 	});	
 	</script>
 
