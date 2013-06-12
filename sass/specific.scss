@@ -92,6 +92,10 @@ div[id^="nav-"], section {
 			@include box-shadow(0 2px 4px -2px rgba(#000,0.5));
 			padding:3%;
 			background: #FFF;
+
+			& > div {
+				margin-bottom: 5em;
+			}
 		}
 	}
 }
@@ -112,4 +116,15 @@ div[id^="nav-"], section {
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #CCC;
+}
+
+.example {
+	@include border-radius(4px);
+	padding: 4%;
+	background: lighten($success-color, 55%);
+	border: 1px solid #AAA;
+}
+
+.structure {
+	margin-bottom: 3em;
 }

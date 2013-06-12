@@ -116,10 +116,11 @@ img {
 [class$="-cols"] {
 	@include clearfix();
 	word-wrap: break-word;
+	
 	& > div {
 		display: inline-block;
 		float: left;
-		margin: 0% 2%;
+		margin: 1% 2%;
 	}
 }
 
