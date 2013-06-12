@@ -216,15 +216,14 @@ hr {
 }
 
 /* table */
+$table-main-bg: #555;
+
 table { 
 	margin: 10px 0; 
 	width:100%; 
-	border-collapse: collapse; 
 	border-spacing: 0; 
 
 	thead th {
-		background: #555; 
-  		color: white; 
 		font-size: 95%; 
 		font-weight: bold;
 	}
@@ -233,16 +232,39 @@ table {
 	}
 	th, td { 
 		padding: 8px; 
-		border: 1px solid #CCC; 
 		word-wrap: break-word; 
 	}
 
-	&.striped {
-		tbody tr:nth-of-type(odd) { 
-	  		background: #eee; 
-		}
+	&.striped-odd tbody tr:nth-of-type(odd) { 
+	  	background: #eee; 
+	}
+
+	&.striped-even tbody tr:nth-of-type(even) { 
+	  	background: #eee; 
 	}
 	
+	&, &.table-default {
+		thead th {
+			background: $table-main-bg; 
+	  		color: white; 
+	  	}
+
+	  	th, td {
+	  		border: 1px solid #CCC; 
+	  	}
+	}
+
+	&.table-lined {
+		th, td {
+			border: 0;
+	  		border-top: 1px solid #CCC; 
+	  		border-bottom: 1px solid #CCC; 
+	  	}	
+	  	thead tr th {
+			background: none;
+			color: $table-main-bg;
+		}
+	}
 }
 
 .table-fixed {
