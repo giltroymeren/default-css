@@ -52,21 +52,23 @@ ul, ol {
 	line-height: 1em;
 	ul, ol { 
 		margin-top: 0.75em; 
-		font-size: 95%; 
 	}
 }
 ul { 
 	list-style: square outside;
-	&.list-no-bullet { 
+	&.ul-no-bullet { 
 		list-style: none; 
+		& ul {
+			list-style: inherit;
+		}
 	}
-	&.list-square { 
+	&.ul-square { 
 		list-style: square outside; 
 	}
-	&.list-circle { 
+	&.ul-circle { 
 		list-style: circle outside; 
 	}
-	&.list-disc { 
+	&.ul-disc { 
 		list-style: disc outside; 
 	}
 	ul {
@@ -76,12 +78,29 @@ ul {
 		}
 	}
 }
-ol { 
+
+ol, ol.ol-default { 
 	list-style: decimal; 
 	ol {
 		list-style: lower-alpha; 
 		ol {
 			list-style: lower-roman; 
+		}
+	}
+}
+
+ol.ol-formal {
+	list-style: upper-roman;
+	ol {
+		list-style: upper-alpha; 
+		ol {
+			list-style: decimal;
+			ol {
+				list-style: lower-alpha; 
+				ol {
+					list-style: lower-roman; 
+				}
+			}
 		}
 	}
 }
@@ -121,24 +140,23 @@ dl {
 }
 
 /* code */
+code, kbd, tt { 
+	@include monospace-font(""); 
+}	
+
 code, kbd {
+	@include border-radius(3px);
 	margin: 0 0.2em;
 	padding: 0.1em 0.25em; 
 	font-size: 0.8em; 
 	line-height: 1.5em;
 }
 code { 
-	@include monospace-font("");
 	vertical-align: text-top;
 	background: #DEDEDE; 
 	border-bottom: solid 1px #CCC;  
 }
-tt { 
-	@include monospace-font(""); 
-}	
 kbd { 
-	@include monospace-font("");
-	@include border-radius(3px);
 	vertical-align: middle; 
 	background: #EEE; 
 	border: 1px solid #CCC; 
@@ -195,14 +213,12 @@ table {
 	width:100%; 
 	border-collapse: collapse; 
 	border-spacing: 0; 
+
 	thead th {
 		background: #555; 
   		color: white; 
 		font-size: 95%; 
 		font-weight: bold;
-	}
-	tbody tr:nth-of-type(odd) { 
-	  background: #eee; 
 	}
 	td { 
 		font-size: 85%; 
@@ -211,6 +227,12 @@ table {
 		padding: 8px; 
 		border: 1px solid #CCC; 
 		word-wrap: break-word; 
+	}
+
+	&.striped {
+		tbody tr:nth-of-type(odd) { 
+	  		background: #eee; 
+		}
 	}
 	
 }

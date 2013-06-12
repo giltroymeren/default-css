@@ -8,18 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<link rel="stylesheet" type="text/css" href="css/typography.css">
 	<link rel="stylesheet" type="text/css" href="css/forms.css">
-	<link rel="stylesheet" type="text/css" href="css/specific.css">
-
-	<style type="text/css">
-		nav {
-			z-index: 10000;
-		}
-		.hover {
-			position: relative;
-		}
-
-		nav ul ul, nav ul ul ul { visibility: hidden; }
-	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="css/specific.css"> -->
 </head>
 
 <body>
@@ -30,8 +19,9 @@
 
 			<header id="header-animated">
 				<div class="header-inner">
-					<h1>default-css</h1>
-
+					
+					<h1 class="title">default-css</h1>
+					<!--
 					<nav>
 						<ul class="list-no-bullet">
 							<li>
@@ -112,11 +102,11 @@
 						</ul>
 
 					</nav>
-
+					-->
 				</div>
 			</header>
 
-			<div id="banner">
+			<div id="header-banner">
 				<p>
 					Sapiente YOLO squid, lo-fi placeat flexitarian next level non deserunt qui bitters whatever. Scenester hella bespoke, minim selvage iPhone consectetur single-origin coffee banjo nisi whatever mustache narwhal McSweeney's irony. Tempor mustache High Life, Marfa disrupt assumenda nulla VHS fixie cliche tumblr mlkshk. Pop-up sriracha tousled, readymade vero deserunt shoreditch selvage scenester Cosby sweater flannel exercitation hashtag. Church-key deserunt scenester, banjo lo-fi culpa wolf cray tumblr qui banh mi pour-over fugiat. Occupy eiusmod Vice, you probably haven't heard of them polaroid Portland nihil. Fingerstache magna McSweeney's pop-up assumenda et.
 				</p>
@@ -129,6 +119,266 @@
 					Sapiente YOLO squid, lo-fi placeat flexitarian next level non deserunt qui bitters whatever. Scenester hella bespoke, minim selvage iPhone consectetur single-origin coffee banjo nisi whatever mustache narwhal McSweeney's irony. Tempor mustache High Life, Marfa disrupt assumenda nulla VHS fixie cliche tumblr mlkshk. Pop-up sriracha tousled, readymade vero deserunt shoreditch selvage scenester Cosby sweater flannel exercitation hashtag. Church-key deserunt scenester, banjo lo-fi culpa wolf cray tumblr qui banh mi pour-over fugiat. Occupy eiusmod Vice, you probably haven't heard of them polaroid Portland nihil. Fingerstache magna McSweeney's pop-up assumenda et.
 				</p>
 			</div>
+
+		</div>
+
+		<div id="main-body">
+
+			<div id="breakdown">
+
+				<div id="breakdown-nav" class="left">
+					<nav>
+						<h2>Selection</h2>
+
+						<a href="#heading">Headings</a>
+						<a href="#paragraph">Paragraphs</a>
+						<a href="#list">Lists</a>
+						<a href="#table">Tables</a>
+						<a href="#form">Forms</a>
+						<a href="#button">Buttons</a>
+					</nav>
+				</div>
+
+				<div id="breakdown-content" class="right">
+
+					<section id="heading">
+						<h2>Headings</h2>
+
+						<h1>h1 heading</h1>
+						<h2>h2 heading</h2>
+						<h3>h3 heading</h3>
+						<h4>h4 heading</h4>
+						<h5>h5 heading</h5>
+						<h6>h6 heading</h6>
+					</section>
+
+					<section id="paragraph">
+						<h2>Paragraphs</h2>
+
+						<p>
+							Twelve ziggurats quickly jumped a finch box. My faxed joke won a pager in the cable TV quiz show. The quick onyx goblin jumps over the lazy dwarf. The lazy major was fixing Cupid&#8217;s broken quiver. Amazingly few discotheques provide jukeboxes. Foxy diva Jennifer Lopez wasn&#8217;t baking my quiche. Cozy lummox gives smart squid who asks for job pen. By Jove, my quick study of lexicography won a prize. Painful zombies quickly watch a jinxed graveyard. Fax back Jim&#8217;s Gwyneth Paltrow video quiz. My girl wove six dozen plaid jackets before she quit.
+						</p>
+
+						<p>
+							Six big devils from Japan quickly forgot how to waltz. &#8220;Who am taking the ebonics quiz?&#8221;, the prof jovially axed. Why shouldn&#8217;t a quixotic Kazakh vampire jog barefoot? Grumpy wizards make a toxic brew for the jovial queen Sixty zips were quickly picked from the woven jute bag. Big July earthquakes confound zany experimental vow. Foxy parsons quiz and cajole the lovably dim wiki-girl. Cute, kind, jovial, foxy physique, amazing beauty? Wowser! Have a pick: twenty six letters — no forcing a jumbled quiz! A very big box sailed up then whizzed quickly from Japan. Jack quietly moved up front and seized the big ball of wax. Few black taxis drive up major roads on quiet hazy nights.
+						</p>
+
+						<div class="footnote">
+							<p>
+								Pangram ipsums by <a target="_blank" href="http://mcdlr.com/pangram-ipsum/">mcdlr</a>.
+							</p>
+						</div>
+					</section>
+
+					<section id="list">
+						<h2>Lists</h2>
+
+						<div class="two-cols">
+							<h3>Unordered List</h3>
+							<div>
+								<h4>Square / Default</h4>
+								<p>
+									Apply the class <code>ul-square</code> to the <code>&#60;ul&#62;</code> tag.
+								</p>
+
+								<ul>
+									<li>Vamp fox held quartz duck just by wing.</li> 
+									<li>Five quacking zephyrs jolt my wax bed.</li> 
+									<li>The five boxing wizards jump quickly.</li> 
+									<li>Jackdaws love my big sphinx of quartz.</li> 
+								</ul>
+							</div>
+
+							<div>
+								<h4>Circle</h4>
+								<p>
+									Apply the class <code>ul-circle</code> to the <code>&#60;ul&#62;</code> tag.
+								</p>
+
+								<ul class="ul-circle">
+									<li>Kvetching, flummoxed by job, W. zaps Iraq.</li> 
+									<li>My ex pub quiz crowd gave joyful thanks.</li> 
+									<li>Cozy sphinx waves quart jug of bad milk.</li> 
+									<li>A very bad quack might jinx zippy fowls.</li>
+								</ul>
+							</div>
+
+							<div>
+								<h4>Disc / Bullet</h4>
+								<p>
+									Apply the class <code>ul-disc</code> to the <code>&#60;ul&#62;</code> tag.
+								</p>
+
+								<ul class="ul-disc">
+									<li>Pack my box with five dozen liquor jugs.</li> 
+									<li>Few quips galvanized the mock jury box.</li> 
+									<li>Quick brown fox jumps over the lazy dog.</li> 
+									<li>Jumpy halfling dwarves pick quartz box.</li> 
+								</ul>
+							</div>
+
+							<div>
+								<h4>No Bullet</h4>
+								<p>
+									Apply the class <code>ul-no-bullet</code> to the <code>&#60;ul&#62;</code> tag.
+								</p>
+
+								<ul class="ul-no-bullet">
+									<li>Pack my box with five dozen liquor jugs.</li> 
+									<li>Few quips galvanized the mock jury box.</li> 
+									<li>Quick brown fox jumps over the lazy dog.</li> 
+									<li>Jumpy halfling dwarves pick quartz box.</li> 
+								</ul>
+							</div>
+						</div> <!-- END Unordered List -->
+
+						<div class="two-cols">
+							<h2>Ordered List</h2>
+
+							<div>
+								<h4>Default</h4>
+								<p>
+									Apply the class <code>ol-default</code> to the <code>&#60;ol&#62;</code> tag.
+									Supports up to a three-level list / outline.
+								</p>
+								
+								<div>
+									<p>Structure:</p>
+									<ul class="ul-no-bullet">
+										<li>
+											First level: <code>list-style-type: decimal</code>
+											<ul>
+												<li>
+													Second level: <code>list-style-type: lower-alpha</code>
+													<ul>
+														<li>Third level: <code>list-style-type: lower-roman</code></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+
+								<ol>
+									<li>Vamp fox held quartz duck just by wing.</li> 
+									<li>
+										Five quacking zephyrs jolt my wax bed.
+										<ol>
+											<li>Kvetching, flummoxed by job, W. zaps Iraq.</li> 
+											<li>My ex pub quiz crowd gave joyful thanks.</li> 
+										</ol>
+									</li> 
+									<li>The five boxing wizards jump quickly.</li> 
+									<li>
+										Jackdaws love my big sphinx of quartz.
+										<ol>
+											<li>Cozy sphinx waves quart jug of bad milk.</li> 
+											<li>
+												A very bad quack might jinx zippy fowls.
+												<ol>
+													<li>Pack my box with five dozen liquor jugs.</li> 
+													<li>Few quips galvanized the mock jury box.</li> 
+													<li>Quick brown fox jumps over the lazy dog.</li> 
+													<li>Jumpy halfling dwarves pick quartz box.</li> 
+												</ol>
+											</li>
+											<li>Vamp fox held quartz duck just by wing.</li> 
+										</ol>
+									</li> 
+									<li>Five quacking zephyrs jolt my wax bed.</li>
+									<li>The five boxing wizards jump quickly.</li> 
+								</ol>
+							</div>
+
+							<div>
+								<h4>Formal</h4>
+								<p>
+									Apply the class <code>ol-formal</code> to the <code>&#60;ol&#62;</code> tag.
+									Supports up to a five-level list / outline.
+								</p>
+
+								<div>
+									<p>Structure:</p>
+									<ul class="ul-no-bullet">
+										<li>
+											First level: <code>list-style-type: upper-roman</code>
+											<ul>
+												<li>
+													Second level: <code>list-style-type: upper-alpha</code>
+													<ul>
+														<li>
+															Third level: <code>list-style-type: decimal</code>
+															<ul>
+																<li>
+																	Fourth level: <code>list-style-type: lower-alpha</code>
+																	<ul>
+																		<li>Fifth level: <code>list-style-type: lower-roman</code></li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+
+								<ol class="ol-formal">
+									<li>Vamp fox held quartz duck just by wing.</li> 
+									<li>Five quacking zephyrs jolt my wax bed.</li> 
+									<li>
+										Jackdaws love my big sphinx of quartz.
+										<ol>
+											<li>Cozy sphinx waves quart jug of bad milk.</li> 
+											<li>
+												A very bad quack might jinx zippy fowls.
+												<ol>
+													<li>
+														Pack my box with five dozen liquor jugs.
+														<ol>
+															<li>Quick brown fox jumps over the lazy dog.</li> 
+															<li>
+																Jumpy halfling dwarves pick quartz box.
+																<ol>
+																	<li>The five boxing wizards jump quickly.</li> 
+																	<li>Jackdaws love my big sphinx of quartz.</li> 
+																</ol>
+															</li>
+															<li>Vamp fox held quartz duck just by wing.</li> 
+															<li>Five quacking zephyrs jolt my wax bed.</li> 
+														</ol>
+													</li> 
+													<li>Few quips galvanized the mock jury box.</li>  
+												</ol>
+											</li>
+											<li>My ex pub quiz crowd gave joyful thanks.</li> 
+											<li>Cozy sphinx waves quart jug of bad milk.</li> 
+										</ol>
+									</li> 
+									<li>Jackdaws love my big sphinx of quartz.</li> 
+								</ol>
+							</div>
+						</div> <!-- END Ordered List -->
+					</section>
+
+					<section id="table">
+						<h2>Tables</h2>
+					</section>
+
+					<section id="form">
+						<h2>Forms</h2>
+					</section>
+
+					<section id="button">
+						<h2>Buttons</h2>
+					</section>
+
+				</div>
+
+			</div>
+
+			
 
 		</div>
 
