@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<link rel="stylesheet" type="text/css" href="css/typography.css">
 	<link rel="stylesheet" type="text/css" href="css/forms.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/specific.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/specific.css">
 </head>
 
 <body>
@@ -676,6 +676,152 @@
 
 					<section id="form">
 						<h2>Forms</h2>
+
+						<div>
+							<h3>Textboxes</h3>
+							<div>
+								<h4>Default</h4>
+								<form>
+									<input type="text" placeholder="Placeholder"/>
+								</form>
+							</div>
+
+							<div>
+								<h4>Password</h4>
+								<form>
+									<input type="password" placeholder="Placeholder"/>
+								</form>
+							</div>
+
+							<div>
+								<h4>E-Mail</h4>
+								<p>
+									Use <code>&#60;input type="email"&#62;</code>.
+								</p>
+
+								<form>
+									<input type="email" placeholder="Placeholder"/>
+								</form>
+							</div>
+
+							<div>
+								<h4>File (upload)</h4>
+								<p>
+									Use <code>&#60;input type="file"&#62;</code>.
+									Be sure to include the attribute <code>enctype="multipart/form-data"</code>
+									to the <code>&#60;form&#62;</code> tag if you're using this.
+								</p>
+
+								<form>
+									<input type="file" placeholder="Placeholder"/>
+								</form>
+							</div>
+
+							<div>
+								<h4>Disabled</h4>
+								<p>
+									Apply the attribute <code>disabled="disabled"</code> or class <code>disabled</code>
+									to the <code>&#60;input&#62;</code> tag.
+								</p>
+								<form>
+									<input type="text" placeholder="Placeholder" disabled="disabled" />
+								</form>
+							</div>
+						</div>
+
+						<div>
+							<h3>Checkboxes</h3>
+							<div>
+								<h4>Default</h4>
+								<form>
+									<input type="checkbox" id="c1" />
+									<label for="c1">Checkbox 1</label>
+
+									<input type="checkbox" id="c2" />
+									<label for="c2">Checkbox 2</label>
+
+									<input type="checkbox" id="c3" />
+									<label for="c3">Checkbox 3</label>
+								</form>
+							</div>
+						</div>
+
+						<div>
+							<h3>Radio Buttons</h3>
+							<div>
+								<h4>Default</h4>
+								<form>
+									<input type="radio" name="radio-group" id="r1" />
+									<label for="r1">Radio 1</label>
+
+									<input type="radio" name="radio-group" id="r2" />
+									<label for="r2">Radio 2</label>
+
+									<input type="radio" name="radio-group" id="r3" />
+									<label for="r3">Radio 3</label>
+								</form>
+							</div>
+						</div>
+
+						<div>
+							<h3>Selection</h3>
+
+							<div>
+								<h4>Default</h4>
+								<form>
+									<label for="select1">Countries</label>
+									<select id="select1">
+										<optgroup label="Asia">
+											<option>China</option>
+											<option>Japan</option>
+											<option>Philippines</option>
+										</optgroup>
+
+										<optgroup label="North America">
+											<option>Canada</option>
+											<option>USA</option>
+										</optgroup>
+
+										<optgroup label="South America">
+											<option>Argentina</option>
+											<option>Brazil</option>
+											<option>Colombia</option>
+										</optgroup>
+									</select>
+								</form>
+							</div>
+
+							<div>
+								<h4>Disabled</h4>
+								<p>
+									Apply the attribute <code>disabled="disabled"</code> or class <code>disabled</code>
+									to the <code>&#60;select&#62;</code> tag.
+								</p>
+
+								<form>
+									<label for="select2">Countries</label>
+									<select id="select2" disabled="disabled">
+										<optgroup label="Asia">
+											<option>China</option>
+											<option>Japan</option>
+											<option>Philippines</option>
+										</optgroup>
+
+										<optgroup label="North America">
+											<option>Canada</option>
+											<option>USA</option>
+										</optgroup>
+
+										<optgroup label="South America">
+											<option>Argentina</option>
+											<option>Brazil</option>
+											<option>Colombia</option>
+										</optgroup>
+									</select>
+								</form>
+							</div>
+						</div>
+
 					</section>
 
 					<section id="button">

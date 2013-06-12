@@ -15,7 +15,7 @@ form {
 	label, h5, .label-title {
 		@include sans-serif-font("");
 		color: #555;
-		font-size: 1.25em;
+		font-size: 1em;
 		font-weight: 600;
 	}
 
@@ -55,6 +55,11 @@ select {
 		@include transition("all 0.1s ease");
 		border-color: #777;  
 	}
+}
+
+input[type="email"], 
+input[type="file"] {
+	@include monospace-font("");
 }
 
 textarea { 
