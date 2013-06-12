@@ -113,17 +113,25 @@ li {
 dl {
 	margin: 10px 0;
 	dt {
-		margin-left: 15px;
+		margin-left: 1em;
 	}
 	dd {
-		margin-left: 30px;
+		padding-left: 2em;
 	}
 	&[class^="def-"] dd:before {
 	    display: inline-block;
 	    margin-right: 3px;
-	    margin-top: -5px;
+	    margin-top: -10px;
 	    position: relative;
 	    pointer-events: none;
+	}
+
+	&.def-bold-title dt {
+		font-weight: bold;
+	}
+
+	&.def-dash dd:before {
+		content: "-";
 	}
 	&.def-circle dd:before {
 		content: "\25CB";
