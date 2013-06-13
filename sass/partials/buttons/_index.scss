@@ -45,6 +45,9 @@
 			@include btn-modern-theme("disabled");
 		}
 	} @else if $theme == "flat" {
+		a.button, button, input {
+			@include btn-flat-theme("regular");
+		}
 		input[type="submit"], .btn-positive { 
 			@include btn-flat-theme("success");
 		}
@@ -54,7 +57,7 @@
 		.btn-warning {
 			@include btn-flat-theme("warning");
 		}
-		.btn-regular, a.btn {
+		.btn-regular {
 			@include btn-flat-theme("regular");
 		}	
 		input[disabled="disabled"], 
