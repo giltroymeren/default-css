@@ -12,9 +12,7 @@ $rose-chrome-color-set: (#D26, #B1A, #D1B, #C18, #D28, #C27);
 $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 
 
-@mixin button-chrome($color-set) {
-	@include background-gradient(nth($color-set, 1), top, 
-		nth($color-set, 3) 0%, nth($color-set, 4) 100%);
+@mixin btn-chrome-skel {
 	@include border-radius(4px);
 	@include transition(all 0.1s ease-in);
 
@@ -22,29 +20,41 @@ $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 	margin: 0 5px 20px 0; 
 	padding: 8px 15px;
 
-	color: #222 !important;
+	&:active {
+		top: 1px;
+		position: relative;
+	}
+
+}
+
+@mixin btn-chrome($color-set) {
+	@include background-gradient(nth($color-set, 1), top, 
+		nth($color-set, 3) 0%, nth($color-set, 4) 100%);
+	@include btn-chrome-skel;
+
 	border: solid 1px nth($color-set, 2);
-	
+	color: #333;	
 	&:hover {
 		@include background-gradient(nth($color-set, 5), top, 
 			nth($color-set, 5) 0%, nth($color-set, 6) 100%);
 	}
 	&:active {
-		top: 1px;
-		position: relative;
 		color: #444;
 		@include background-gradient(nth($color-set, 1), top, 
 			nth($color-set, 4) 0%, nth($color-set, 3) 100%);
 	}
 }
-@mixin button-chrome-theme($theme) {
+
+@mixin btn-chrome-theme($theme) {
 	@if $theme == "success" {
-		@include button-chrome($green-chrome-color-set);
+		@include btn-chrome($green-chrome-color-set);
 	} @else if $theme == "error" {
-		@include button-chrome($rose-chrome-color-set);
+		@include btn-chrome($rose-chrome-color-set);
 	} @else if $theme == "warning" {
-		@include button-chrome($orange-chrome-color-set);
+		@include btn-chrome($orange-chrome-color-set);
+	} @else if $theme == "disabled" {
+		@include btn-chrome-skel;
 	} @else {
-		@include button-chrome($grey-chrome-color-set);
+		@include btn-chrome($grey-chrome-color-set);
 	}
 }

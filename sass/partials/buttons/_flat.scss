@@ -9,7 +9,7 @@ $red-flat-color-set: (#B02, #801, #A01, #C23);
 //$orange-yellow-flat-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
 $orange-yellow-flat-color-set: (#C90, #960, #B80, #DA2);
 
-@mixin button-flat($color-set) {
+@mixin btn-flat($color-set) {
 	@include border-radius(4px);
 	
 	margin: 10px 3px 3px 0;
@@ -33,16 +33,16 @@ $orange-yellow-flat-color-set: (#C90, #960, #B80, #DA2);
 	}
 }
 
-@mixin button-flat-theme($theme) {
+@mixin btn-flat-theme($theme) {
 	@if $theme == "success" {
-		@include button-flat($green-flat-color-set);
+		@include btn-flat($green-flat-color-set);
 	} @else if $theme == "error" {
-		@include button-flat($red-flat-color-set);
+		@include btn-flat($red-flat-color-set);
 	} @else if $theme == "warning" {
-		@include button-flat($orange-yellow-flat-color-set);
+		@include btn-flat($orange-yellow-flat-color-set);
 	} @else if $theme == "disabled" {
-		@include button-flat($grey-flat-color-set);
+		@include btn-flat($grey-flat-color-set);
 	} @else {
-		@include button-flat($blue-flat-color-set);
+		@include btn-flat($blue-flat-color-set);
 	}
 }

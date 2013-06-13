@@ -9,7 +9,7 @@ $red-threeD-color-set: (#B02, #801, #A01, #C23);
 //$orange-yellow-threeD-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
 $orange-yellow-threeD-color-set: (#C90, #960, #B80, #DA2);
 
-@mixin button-threeD($color-set) {
+@mixin btn-threeD($color-set) {
 	@include box-shadow(inset 0 1px 0 rgba(255,255,255, 0.5));
 	@include border-radius(5px);
 	margin-top: 10px;
@@ -35,16 +35,16 @@ $orange-yellow-threeD-color-set: (#C90, #960, #B80, #DA2);
 	}
 }
 
-@mixin button-threeD-theme($theme) {
+@mixin btn-threeD-theme($theme) {
 	@if $theme == "success" {
-		@include button-threeD($green-threeD-color-set);
+		@include btn-threeD($green-threeD-color-set);
 	} @else if $theme == "error" {
-		@include button-threeD($red-threeD-color-set);
+		@include btn-threeD($red-threeD-color-set);
 	} @else if $theme == "warning" {
-		@include button-threeD($orange-yellow-threeD-color-set);
+		@include btn-threeD($orange-yellow-threeD-color-set);
 	} @else if $theme == "disabled" {
-		@include button-threeD($grey-threeD-color-set);
+		@include btn-threeD($grey-threeD-color-set);
 	} @else {
-		@include button-threeD($blue-threeD-color-set);
+		@include btn-threeD($blue-threeD-color-set);
 	}
 }

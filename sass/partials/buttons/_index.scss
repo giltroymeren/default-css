@@ -3,67 +3,74 @@
 @import "partials/buttons/flat";
 @import "partials/buttons/chrome";
 
-@mixin set-button-theme($theme) {
+@mixin set-btn-theme($theme) {
 	@if $theme == "threeD" {
 		input[type="submit"], .positive-btn { 
-			@include button-threeD-theme("success");
+			@include btn-threeD-theme("success");
 		}
 		input[type="reset"], .negative-btn { 
-			@include button-threeD-theme("error");	
+			@include btn-threeD-theme("error");	
 		}
 		.warning-btn {
-			@include button-threeD-theme("warning");
+			@include btn-threeD-theme("warning");
 		}
-		.regular-btn, a.button {
-			@include button-threeD-theme("base");
+		.regular-btn, a.btn {
+			@include btn-threeD-theme("base");
 		}	
+		input[disabled="disabled"], 
 		.disabled {
-			@include button-threeD-theme("disabled");
+			@include btn-threeD-theme("disabled");
 		}
 	} @else if $theme == "modern" {
 		input[type="submit"], .positive-btn { 
-			@include button-modern-theme("success");
+			@include btn-modern-theme("success");
 		}
 		input[type="reset"], .negative-btn { 
-			@include button-modern-theme("error");	
+			@include btn-modern-theme("error");	
 		}
 		.warning-btn {
-			@include button-modern-theme("warning");
+			@include btn-modern-theme("warning");
 		}
-		.regular-btn, a.button {
-			@include button-modern-theme("base");
+		.regular-btn, a.btn {
+			@include btn-modern-theme("base");
 		}	
+		input[disabled="disabled"], 
 		.disabled {
-			@include button-modern-theme("disabled");
+			@include btn-modern-theme("disabled");
 		}
 	} @else if $theme == "flat" {
 		input[type="submit"], .positive-btn { 
-			@include button-flat-theme("success");
+			@include btn-flat-theme("success");
 		}
 		input[type="reset"], .negative-btn { 
-			@include button-flat-theme("error");	
+			@include btn-flat-theme("error");	
 		}
 		.warning-btn {
-			@include button-flat-theme("warning");
+			@include btn-flat-theme("warning");
 		}
-		.regular-btn, a.button {
-			@include button-flat-theme("base");
+		.regular-btn, a.btn {
+			@include btn-flat-theme("base");
 		}	
+		input[disabled="disabled"], 
 		.disabled {
-			@include button-flat-theme("disabled");
+			@include btn-flat-theme("disabled");
 		}
 	} @else if $theme == "chrome" {
 		input[type="submit"], .positive-btn { 
-			@include button-chrome-theme("success");
+			@include btn-chrome-theme("success");
 		}
 		input[type="reset"], .negative-btn { 
-			@include button-chrome-theme("error");	
+			@include btn-chrome-theme("error");	
 		}
 		.warning-btn {
-			@include button-chrome-theme("warning");
+			@include btn-chrome-theme("warning");
 		}
 		.regular-btn {
-			@include button-chrome-theme("base");
+			@include btn-chrome-theme("base");
+		}
+		input[disabled="disabled"], 
+		.disabled {
+			@include btn-chrome-theme("base");
 		}	
 	}
 }

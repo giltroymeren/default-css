@@ -14,7 +14,7 @@ $orange-yellow-modern-color-set: (#C90, #960, #B80, #DA2);
     	inset 0 3px 2px rgba(0,0,0,0.12)");
 }
 
-@mixin button-modern($color-set) {
+@mixin btn-modern($color-set) {
 	@include border-radius(5px);
 	@include embossed;
 	margin-top: 10px;
@@ -38,16 +38,16 @@ $orange-yellow-modern-color-set: (#C90, #960, #B80, #DA2);
 	}
 }
 
-@mixin button-modern-theme($theme) {
+@mixin btn-modern-theme($theme) {
 	@if $theme == "success" {
-		@include button-modern($green-modern-color-set);
+		@include btn-modern($green-modern-color-set);
 	} @else if $theme == "error" {
-		@include button-modern($red-modern-color-set);
+		@include btn-modern($red-modern-color-set);
 	} @else if $theme == "warning" {
-		@include button-modern($orange-yellow-modern-color-set);
+		@include btn-modern($orange-yellow-modern-color-set);
 	} @else if $theme == "disabled" {
-		@include button-modern($grey-modern-color-set);
+		@include btn-modern($grey-modern-color-set);
 	} @else {
-		@include button-modern($blue-modern-color-set);
+		@include btn-modern($blue-modern-color-set);
 	}
 }
