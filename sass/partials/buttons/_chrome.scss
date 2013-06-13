@@ -10,6 +10,9 @@ $rose-chrome-color-set: (#D26, #B1A, #D1B, #C18, #D28, #C27);
 //$grey-chrome-color-set: (bg-color #777, border-color #666, bg-grad-start #999, 
 //		bg-grad-stop #AAA, hover-grad-start #BBB, hover-grad-stop #CCC);
 $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
+//$blue-chrome-color-set: (bg-color #29C, border-color #17B, bg-grad-start #26C, 
+//		bg-grad-stop #29C, hover-grad-start #29E, hover-grad-stop #19B);
+$blue-chrome-color-set: (#29C, #17B, #26C, #29C, #29E, #19B);
 
 
 @mixin btn-chrome-skel {
@@ -69,6 +72,6 @@ $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 	} @else if $theme == "disabled" {
 		@include btn-chrome-disabled;
 	} @else {
-		@include btn-chrome-disabled;
+		@include btn-chrome($blue-chrome-color-set);
 	}
 }

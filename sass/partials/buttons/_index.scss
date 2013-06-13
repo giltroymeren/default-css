@@ -22,6 +22,9 @@
 			@include btn-threeD-theme("disabled");
 		}
 	} @else if $theme == "modern" {
+		a.button, button, input {
+			@include btn-modern-theme("base");
+		}
 		input[type="submit"], .btn-positive { 
 			@include btn-modern-theme("success");
 		}
@@ -56,6 +59,9 @@
 			@include btn-flat-theme("disabled");
 		}
 	} @else if $theme == "chrome" {
+		a.button, button, input {
+			@include btn-chrome-theme("base");
+		}
 		input[type="submit"], .btn-positive { 
 			@include btn-chrome-theme("success");
 		}
@@ -64,7 +70,7 @@
 		}
 		input[disabled="disabled"], 
 		.disabled {
-			@include btn-chrome-theme("base");
+			@include btn-chrome-theme("disabled");
 		}
 		.btn-warning {
 			@include btn-chrome-theme("warning");
