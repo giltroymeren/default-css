@@ -9,29 +9,52 @@ $red-threeD-color-set: (#B02, #801, #A01, #C23);
 //$orange-yellow-threeD-color-set: (bg-color #C90, border-color #960, active-bg-color #B80, hover-bg-color #DA2)
 $orange-yellow-threeD-color-set: (#C90, #960, #B80, #DA2);
 
-@mixin btn-threeD($color-set) {
+@mixin btn-threeD-skel {
 	@include box-shadow(inset 0 1px 0 rgba(255,255,255, 0.5));
 	@include border-radius(5px);
-	margin-top: 10px;
 	padding: 10px 15px;
-	background-color: nth($color-set, 1);
-	border-color: nth($color-set, 2);
 	border-width: 1px 1px 4px 1px;
-	color: #FFF !important;
 	text-shadow: none !important;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	&:active {
-		@include box-shadow(none);
 		position: relative;
-		background-color: nth($color-set, 3);
 		border-width: 3px 1px 1px 1px;
-		margin-top: 11px;
+		margin-top: 1px;
+	}
+}
+
+@mixin btn-threeD($color-set) {
+	@include btn-threeD-skel;
+	background-color: nth($color-set, 1);
+	border-color: lighten(nth($color-set, 2), 15%);
+	color: #FFF !important;
+	
+	&:active {
+		background-color: nth($color-set, 3);
+		@include box-shadow(inset 0 -1px 0 rgba(255,255,255, 0.5));
 	}
 
 	&:hover {
 		background-color: nth($color-set, 4);
-		border-color: nth($color-set, 2);
+		border-color: lighten(nth($color-set, 2), 20%);
+	}
+}
+
+@mixin btn-threeD-disabled {
+	@include btn-threeD-skel;
+	background-color: nth($grey-threeD-color-set, 1);
+	border-color: nth($grey-threeD-color-set, 2);
+	color: #FFF !important;
+	
+	&:hover, &:active {
+		background-color: nth($grey-threeD-color-set, 4);
+		border-color: nth($grey-threeD-color-set, 2);
+	}
+	&:active {
+		@include box-shadow(inset 0 1px 0 rgba(255,255,255, 0.5));
+		margin-top: 0;
+		border-width: 1px 1px 4px 1px;
 	}
 }
 
@@ -43,7 +66,7 @@ $orange-yellow-threeD-color-set: (#C90, #960, #B80, #DA2);
 	} @else if $theme == "warning" {
 		@include btn-threeD($orange-yellow-threeD-color-set);
 	} @else if $theme == "disabled" {
-		@include btn-threeD($grey-threeD-color-set);
+		@include btn-threeD-disabled;
 	} @else {
 		@include btn-threeD($blue-threeD-color-set);
 	}

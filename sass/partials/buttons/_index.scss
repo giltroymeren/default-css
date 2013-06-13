@@ -5,6 +5,9 @@
 
 @mixin set-btn-theme($theme) {
 	@if $theme == "threeD" {
+		a.button, button, input {
+			@include btn-threeD-theme("regular");
+		}
 		input[type="submit"], .btn-positive { 
 			@include btn-threeD-theme("success");
 		}
@@ -14,8 +17,8 @@
 		.btn-warning {
 			@include btn-threeD-theme("warning");
 		}
-		.btn-regular, a.btn {
-			@include btn-threeD-theme("base");
+		.btn-regular {
+			@include btn-threeD-theme("regular");
 		}	
 		input[disabled="disabled"], 
 		.disabled {
@@ -23,7 +26,7 @@
 		}
 	} @else if $theme == "modern" {
 		a.button, button, input {
-			@include btn-modern-theme("base");
+			@include btn-modern-theme("regular");
 		}
 		input[type="submit"], .btn-positive { 
 			@include btn-modern-theme("success");
@@ -34,8 +37,8 @@
 		.btn-warning {
 			@include btn-modern-theme("warning");
 		}
-		.btn-regular, a.btn {
-			@include btn-modern-theme("base");
+		.btn-regular {
+			@include btn-modern-theme("regular");
 		}	
 		input[disabled="disabled"], 
 		.disabled {
@@ -52,7 +55,7 @@
 			@include btn-flat-theme("warning");
 		}
 		.btn-regular, a.btn {
-			@include btn-flat-theme("base");
+			@include btn-flat-theme("regular");
 		}	
 		input[disabled="disabled"], 
 		.disabled {
@@ -60,7 +63,7 @@
 		}
 	} @else if $theme == "chrome" {
 		a.button, button, input {
-			@include btn-chrome-theme("base");
+			@include btn-chrome-theme("regular");
 		}
 		input[type="submit"], .btn-positive { 
 			@include btn-chrome-theme("success");
@@ -76,7 +79,7 @@
 			@include btn-chrome-theme("warning");
 		}
 		.btn-regular {
-			@include btn-chrome-theme("base");
+			@include btn-chrome-theme("regular");
 		}	
 	}
 }
