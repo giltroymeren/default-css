@@ -25,20 +25,20 @@ $success-color-light: #BF8;
     font-size: 1.8em;
 }
 
+#main-body, #nav-breakdown {
+	@include clearfix();
+}
+
 div[id^="nav-"], section {
 	padding-top: $header-shrink-height * 1.25;
 }
 
-[class^="title"] {
-	@include sans-serif-font("");
-	font-weight: 700;
-}
-
 #nav-breakdown {
+	@include transition("all 0.2s ease");
 	position: relative;
 
 	& > div {
-		margin: 0 1%;
+		margin: 0 2%;
 	}
 	& > .left {
 		@include box-shadow(0 2px 4px rgba(#000,0.5));
@@ -76,6 +76,11 @@ div[id^="nav-"], section {
 		width: 71%;
 	}
 
+	[class^="title"] {
+		@include sans-serif-font("");
+		font-weight: 700;
+	}
+
 	section {
 		.title, .content {
 			border: 1px solid #CCC;
@@ -94,7 +99,7 @@ div[id^="nav-"], section {
 			background: #FFF;
 
 			& > div {
-				margin-bottom: 5em;
+				margin-bottom: 2em;
 			}
 		}
 	}
@@ -127,4 +132,16 @@ div[id^="nav-"], section {
 
 .structure {
 	margin-bottom: 3em;
+}
+
+.btn-example {
+	text-align: center;
+	a.button, button, input {
+		display: inline-block;
+		margin-bottom: 1em;
+	}
+
+	a.button {
+		max-width: 140px;
+	}
 }

@@ -77,16 +77,6 @@ input[type="radio"] {
 	display: inline; 
 }
 
-input[disabled="disabled"], 
-.disabled { 
-	background-color: #CCC; 
-	border: solid 1px #AAA; 
-	&:hover, &:active { 
-		background-color: darken(#CCC, 5%); 
-		@include transition("background 0.25s ease");
-	}  
-}
-
 .input-choose-group {
 	div {
 		margin: 10px;
@@ -130,29 +120,17 @@ input[type="submit"],
 input[type="reset"], 
 input[type="button"] { 
 	@include sans-serif-font(""); 
-	@include border-radius(3px);
 	
 	cursor: pointer;
 	display: inline-block;
 	padding: 10px 15px;
 	vertical-align: top; /* prevents other buttons from moving when one is active */
 	-webkit-appearance: none;
-	border: 1px solid #444;
- 	border-style: solid;
- 	color: #111;
- 	font-size: 14px; 
+	font-size: 1em; 
  	font-weight: 600;
  	line-height: normal; 
  	text-align: center;
  	text-decoration: none;
-	text-shadow: 0 1px rgba(255, 255, 255, .4); 
-
-	&:hover {
-		background-color: #CCC;
-	}
-	&:active {
-		background-color: #AAA;
-	}
 
 	/* Fix for odd Mozilla border & padding issues */
 	&::-moz-focus-inner { 
@@ -160,4 +138,41 @@ input[type="button"] {
 		padding: 0; 
 	} 
 }
+
+input[disabled="disabled"], 
+.disabled { 
+	cursor: default;
+	&:hover, &:active { 
+		@include transition("background 0.25s ease");
+	}  
+}
+
 /* button themes */
+.btn-default {
+	a.button, 
+	button, 
+	input[type="submit"], 
+	input[type="reset"], 
+	input[type="button"] {
+		@include border-radius(3px);
+		border: 1px solid #444;
+	 	border-style: solid;
+	 	color: #111;
+		text-shadow: 0 1px rgba(255, 255, 255, .4); 
+
+		&:hover {
+			background-color: #CCC;
+		}
+		&:active {
+			background-color: #AAA;
+		}
+	}
+	input[disabled="disabled"], 
+	.disabled { 
+		background-color: #CCC; 
+		color: #888;
+		&:hover, &:active { 
+			background-color: darken(#CCC, 5%); 
+		}  
+	}
+}	
