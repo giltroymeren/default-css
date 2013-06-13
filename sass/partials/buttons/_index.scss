@@ -5,16 +5,16 @@
 
 @mixin set-btn-theme($theme) {
 	@if $theme == "threeD" {
-		input[type="submit"], .positive-btn { 
+		input[type="submit"], .btn-positive { 
 			@include btn-threeD-theme("success");
 		}
-		input[type="reset"], .negative-btn { 
+		input[type="reset"], .btn-negative { 
 			@include btn-threeD-theme("error");	
 		}
-		.warning-btn {
+		.btn-warning {
 			@include btn-threeD-theme("warning");
 		}
-		.regular-btn, a.btn {
+		.btn-regular, a.btn {
 			@include btn-threeD-theme("base");
 		}	
 		input[disabled="disabled"], 
@@ -22,16 +22,16 @@
 			@include btn-threeD-theme("disabled");
 		}
 	} @else if $theme == "modern" {
-		input[type="submit"], .positive-btn { 
+		input[type="submit"], .btn-positive { 
 			@include btn-modern-theme("success");
 		}
-		input[type="reset"], .negative-btn { 
+		input[type="reset"], .btn-negative { 
 			@include btn-modern-theme("error");	
 		}
-		.warning-btn {
+		.btn-warning {
 			@include btn-modern-theme("warning");
 		}
-		.regular-btn, a.btn {
+		.btn-regular, a.btn {
 			@include btn-modern-theme("base");
 		}	
 		input[disabled="disabled"], 
@@ -39,16 +39,16 @@
 			@include btn-modern-theme("disabled");
 		}
 	} @else if $theme == "flat" {
-		input[type="submit"], .positive-btn { 
+		input[type="submit"], .btn-positive { 
 			@include btn-flat-theme("success");
 		}
-		input[type="reset"], .negative-btn { 
+		input[type="reset"], .btn-negative { 
 			@include btn-flat-theme("error");	
 		}
-		.warning-btn {
+		.btn-warning {
 			@include btn-flat-theme("warning");
 		}
-		.regular-btn, a.btn {
+		.btn-regular, a.btn {
 			@include btn-flat-theme("base");
 		}	
 		input[disabled="disabled"], 
@@ -56,20 +56,20 @@
 			@include btn-flat-theme("disabled");
 		}
 	} @else if $theme == "chrome" {
-		input[type="submit"], .positive-btn { 
+		input[type="submit"], .btn-positive { 
 			@include btn-chrome-theme("success");
 		}
-		input[type="reset"], .negative-btn { 
+		input[type="reset"], .btn-negative { 
 			@include btn-chrome-theme("error");	
-		}
-		.warning-btn {
-			@include btn-chrome-theme("warning");
-		}
-		.regular-btn {
-			@include btn-chrome-theme("base");
 		}
 		input[disabled="disabled"], 
 		.disabled {
+			@include btn-chrome-theme("base");
+		}
+		.btn-warning {
+			@include btn-chrome-theme("warning");
+		}
+		.btn-regular {
 			@include btn-chrome-theme("base");
 		}	
 	}

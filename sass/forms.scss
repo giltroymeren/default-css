@@ -190,7 +190,6 @@ $btn-default-color: #CCC;
 /* NOTE!
  * set-btn-theme() requires partials/buttons/index
  */
-
 // CHROME
 .btn-chrome {
 	@include set-btn-theme("chrome");

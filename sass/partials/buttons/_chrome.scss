@@ -45,6 +45,20 @@ $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 	}
 }
 
+@mixin btn-chrome-disabled {
+	@include btn-chrome-skel;
+	@include background-gradient(nth($grey-chrome-color-set, 5), top, 
+			nth($grey-chrome-color-set, 5) 0%, nth($grey-chrome-color-set, 6) 100%);
+	@include btn-chrome($grey-chrome-color-set);
+	color: #FFF;
+	&:hover, &:active {
+		@include background-gradient(nth($grey-chrome-color-set, 5), top, 
+			nth($grey-chrome-color-set, 5) 0%, nth($grey-chrome-color-set, 6) 100%);
+		top: 0;
+		color: #FFF;
+	}
+}
+
 @mixin btn-chrome-theme($theme) {
 	@if $theme == "success" {
 		@include btn-chrome($green-chrome-color-set);
@@ -53,8 +67,8 @@ $grey-chrome-color-set: (#777, #666, #888, #444, #666, #777);
 	} @else if $theme == "warning" {
 		@include btn-chrome($orange-chrome-color-set);
 	} @else if $theme == "disabled" {
-		@include btn-chrome-skel;
+		@include btn-chrome-disabled;
 	} @else {
-		@include btn-chrome($grey-chrome-color-set);
+		@include btn-chrome-disabled;
 	}
 }
